@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PortfolioGrid from "./components/PortfolioGrid";
-import SkillsSection from "./components/SkillsSection";
-import Testimonials from "./components/Testimonials";
-import ContactForm from "./components/ContactForm";
-import CTASection from "./components/CTASection";
 import './App.css';
+import ThreeDExpertise from "./components/ThreeDExpertise";
+import CTA from "./components/CTA";
 
 
 const portfolioItemsData = [
@@ -15,12 +12,6 @@ const portfolioItemsData = [
     { imageText: "Abstract Art", title: "Abstract 3D Art", description: "Experimentelle 3D-Kunst und Motion Graphics" },
 ];
 
-const skillsData = [
-    { icon: "🎨", name: "Blender", description: "Modeling, Sculpting, Animation" },
-    { icon: "⚡", name: "Cinema 4D", description: "Motion Graphics, Rendering" },
-    { icon: "🔥", name: "Octane Render", description: "Photorealistic Rendering" },
-    { icon: "💎", name: "Substance Suite", description: "Texturing, Materials" },
-];
 
 
 
@@ -117,27 +108,12 @@ function App() {
 
             {/* Main Content Structure */}
             <div className="container">
-                <div className="header fade-in-initial">
-                    <h1>3D GRAFIKDESIGN PORTFOLIO</h1>
-                    <p>Moderne Website-Struktur für 3D-Modeling & Grafikdesign - Minimalistisch, Professionell, Contemporary</p>
-                </div>
-
-                {/* <div className="structure-grid fade-in-initial">
-                    {sectionData.map(section => (
-                        <SectionCard 
-                            key={section.id}
-                            section={section}
-                            activeSection={activeSection}
-                            onToggleSection={toggleSection}
-                        />
-                    ))}
-                </div> */}
-
-                <div className="wireframe-section fade-in-initial">
-                    <h2 className="wireframe-title">WEBSITE LAYOUT</h2>
+                
+                {<div className="wireframe-section fade-in-initial">
+                    <h2 className="wireframe-title">PORTFOLIO</h2>
                     <div className="wireframe">
                         <div className="nav-wireframe">
-                            <div className="nav-logo">YOUR NAME</div>
+                            <div className="nav-logo">KONRAD KUNKEL</div>
                             <div className="nav-links">
                                 <div className="nav-link">WORK</div>
                                 <div className="nav-link">ABOUT</div>
@@ -167,7 +143,7 @@ function App() {
                             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>Slider mit Kundenstimmen, minimalistisches Kontaktformular</p>
                         </div>
                     </div>
-                </div>
+                </div>}
 
                 <div className="portfolio-showcase fade-in-initial">
                     <h2 className="showcase-title">PORTFOLIO INSPIRATION</h2>
@@ -186,29 +162,9 @@ function App() {
                     </div>
                 </div>
 
-                <div className="skills-section fade-in-initial">
-                    <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '16px', color: 'var(--secondary)' }}>3D EXPERTISE</h2>
-                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem' }}>Tools und Technologien die ich beherrsche</p>
-                    
-                    <div className="skills-grid">
-                        {skillsData.map((skill, index) => (
-                             <div className="skill-item" key={index}>
-                                <div className="skill-icon">{skill.icon}</div>
-                                <h4>{skill.name}</h4>
-                                <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '8px', fontSize: '0.85rem' }}>{skill.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="cta-section fade-in-initial">
-                    <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '16px' }}>READY TO CREATE?</h2>
-                    <p style={{ color: 'var(--gray-600)', fontSize: '1rem' }}>Lass uns dein nächstes 3D-Projekt zum Leben erwecken</p>
-                    <a href="#" className="cta-button">
-                        START A PROJECT
-                        <span style={{ transition: 'transform 0.3s ease' }}>→</span>
-                    </a>
-                </div>
+                
+                <ThreeDExpertise />
+                <CTA/>
             </div>
         </>
     );
