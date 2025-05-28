@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import ThreeDExpertise from "./components/ThreeDExpertise";
 import CTA from "./components/CTA";
-
+import NAV from "./components/NAV";
+import helmet from './components/helmet';
+import ReactDOM from 'react-dom/client';
 
 const portfolioItemsData = [
     { imageText: "Product Visualization", title: "Premium Product Renders", description: "Photorealistische Produktvisualisierung für E-Commerce und Marketing" },
@@ -108,19 +110,16 @@ function App() {
 
             {/* Main Content Structure */}
             <div className="container">
-                
+                <NAV/>
                 {<div className="wireframe-section fade-in-initial">
                     <h2 className="wireframe-title">PORTFOLIO</h2>
                     <div className="wireframe">
-                        <div className="nav-wireframe">
-                            <div className="nav-logo">KONRAD KUNKEL</div>
-                            <div className="nav-links">
-                                <div className="nav-link">WORK</div>
-                                <div className="nav-link">ABOUT</div>
-                                <div className="nav-link">SERVICES</div>
-                                <div className="nav-link">CONTACT</div>
-                            </div>
-                        </div>
+                        const root = ReactDOM.createRoot(document.getElementById('root'));
+                        root.render(
+                            <React.StrictMode>
+                                <App />
+                            </React.StrictMode>
+                        );
 
                         <div className="hero-wireframe">
                             <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', color: 'var(--secondary)' }}>3D VISIONS BROUGHT TO LIFE</h2>
