@@ -1,20 +1,12 @@
-import React, { Suspense, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Html } from '@react-three/drei';
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { useGLTF, Html, OrbitControls } from '@react-three/drei';
 
 // Component for the tank model
 function TankModel(props) {
     const { scene } = useGLTF('/tank.glb');
-    const meshRef = useRef();
 
-    // Rotate the model on each frame
-    useFrame((state, delta) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y += delta * 0.5;
-        }
-    });
-
-    return <primitive object={scene} {...props} ref={meshRef} />;
+    return <primitive object={scene} {...props} />;
 }
 
 export default function HELM() {
@@ -26,7 +18,7 @@ export default function HELM() {
             <color attach="background" args={['#f0f0f0']} /> {/* Lighter background */}
             <ambientLight intensity={0.8} />
             <directionalLight position={[5, 5, 5]} intensity={0.7} />
-            
+            <OrbitControls enablePan={false} /> {/* Added OrbitControls for camera interaction, disabled pan */}
             <Suspense fallback={<Html><div>Loading...</div></Html>}>
                 <TankModel scale={0.1} /> {/* Use the new TankModel component and adjust scale if necessary */}
             </Suspense>
