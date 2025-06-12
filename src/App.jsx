@@ -3,7 +3,7 @@ import './App.css';
 import ThreeDExpertise from "./components/ThreeDExpertise";
 import CTA from "./components/CTA";
 import NAV from "./components/NAV";
-import HELM from './components/HELM';
+import HELM from './components/3D_Viewer';
 import About from "./pages/About"; // Updated import path
 import ReactDOM from 'react-dom/client';
 

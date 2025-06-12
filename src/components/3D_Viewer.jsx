@@ -4,7 +4,7 @@ import { useGLTF, Html, OrbitControls } from '@react-three/drei';
 
 // Component for the tank model
 function TankModel(props) {
-    const { scene } = useGLTF('/tank.glb');
+    const { scene } = useGLTF('src/assets/models/tank.glb');
 
     return <primitive object={scene} {...props} />;
 }
