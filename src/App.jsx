@@ -4,6 +4,7 @@ import ThreeDExpertise from "./components/ThreeDExpertise";
 import CTA from "./components/CTA";
 import NAV from "./components/NAV";
 import HELM from './components/HELM';
+import About from "./components/About";
 import ReactDOM from 'react-dom/client';
 
 const portfolioItemsData = [
@@ -105,19 +106,21 @@ function App() {
     }, []); // Empty dependency array: run once on mount, cleanup on unmount
 
     return (
-        <>
-            {/* Main Content Structure */}
-            <div className="container">
-                <NAV/>
-                {<div className="wireframe-section fade-in-initial">
-                    <h2 className="wireframe-title">PORTFOLIO</h2>
-                    <div className="wireframe">
+        <div className="container">
+            <NAV toggleSection={toggleSection}/>
+            {activeSection === 'about' ? (
+                <About />
+            ) : (
+                <>
+                    <div className="wireframe-section fade-in-initial">
+                        <h2 className="wireframe-title">PORTFOLIO</h2>
+                        <div className="wireframe">
                         {/* <canvas> */}
                             <HELM/>
                         {/* </canvas> */}
                         <div className="hero-wireframe">
                             <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', color: 'var(--secondary)' }}>3D VISIONS BROUGHT TO LIFE</h2>
-                             <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '1rem' }}>Premium 3D Modeling & Visualization</p>
+                            <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '1rem' }}>Premium 3D Modeling & Visualization</p>
                             <div className="hero-visual">Animated 3D Render</div>
                         </div>
 
@@ -136,7 +139,7 @@ function App() {
                             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>Slider mit Kundenstimmen, minimalistisches Kontaktformular</p>
                         </div>
                     </div>
-                </div>}
+                </div>
 
                 <div className="portfolio-showcase fade-in-initial">
                     <h2 className="showcase-title">PORTFOLIO INSPIRATION</h2>
@@ -158,8 +161,9 @@ function App() {
                 
                 <ThreeDExpertise />
                 <CTA/>
-            </div>
-        </>
+                </>
+            )}
+        </div>
     );
 }
 
