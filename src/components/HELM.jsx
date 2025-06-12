@@ -1,24 +1,20 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import { useGLTF, Html } from '@react-three/drei';
 
-// Component for the rotating cube
-function RotatingCube(props) {
+// Component for the tank model
+function TankModel(props) {
+    const { scene } = useGLTF('/tank.glb');
     const meshRef = useRef();
 
-    // Rotate the cube on each frame
+    // Rotate the model on each frame
     useFrame((state, delta) => {
         if (meshRef.current) {
-            meshRef.current.rotation.x += delta * 0.5;
             meshRef.current.rotation.y += delta * 0.5;
         }
     });
 
-    return (
-        <mesh {...props} ref={meshRef}>
-            <boxGeometry args={[1, 1, 1]} /> {/* Standard 1x1x1 cube */}
-            <meshStandardMaterial color={'orange'} />
-        </mesh>
-    );
+    return <primitive object={scene} {...props} ref={meshRef} />;
 }
 
 export default function HELM() {
@@ -31,8 +27,8 @@ export default function HELM() {
             <ambientLight intensity={0.8} />
             <directionalLight position={[5, 5, 5]} intensity={0.7} />
             
-            <Suspense fallback={<div>Loading...</div>}>
-                <RotatingCube scale={1} /> {/* Use the new RotatingCube component */}
+            <Suspense fallback={<Html><div>Loading...</div></Html>}>
+                <TankModel scale={0.1} /> {/* Use the new TankModel component and adjust scale if necessary */}
             </Suspense>
         </Canvas>
     );
