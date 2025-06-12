@@ -112,9 +112,9 @@ function App() {
                 {<div className="wireframe-section fade-in-initial">
                     <h2 className="wireframe-title">PORTFOLIO</h2>
                     <div className="wireframe">
-                        <canvas>
+                        {/* <canvas> */}
                             <HELM/>
-                        </canvas>
+                        {/* </canvas> */}
                         <div className="hero-wireframe">
                             <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', color: 'var(--secondary)' }}>3D VISIONS BROUGHT TO LIFE</h2>
                              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '1rem' }}>Premium 3D Modeling & Visualization</p>
