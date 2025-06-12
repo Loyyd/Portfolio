@@ -4,7 +4,7 @@ import ThreeDExpertise from "./components/ThreeDExpertise";
 import CTA from "./components/CTA";
 import NAV from "./components/NAV";
 import HELM from './components/HELM';
-import About from "./components/About";
+import About from "./pages/About"; // Updated import path
 import ReactDOM from 'react-dom/client';
 
 const portfolioItemsData = [

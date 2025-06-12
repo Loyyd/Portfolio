@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import profileImage from '../assets/profile.jpg';
+import profileImage from '../assets/images/profile.jpg';
 
 const About = () => (
   <div className="about-page">
