@@ -23,7 +23,7 @@ const NAV = ({ toggleSection }) => {
                 </a>
                 {/* Placeholder for Youtube icon */}
                 <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <img src={YoutubeIcon} alt="Youtube" style={{ width: '24px', height: '24px', filter: 'invert(100%)' }} />
+                    <img src={YoutubeIcon} alt="Youtube" style={{ width: '24px', height: '24px' }} />
                 </a>
             </div>
         </div>
