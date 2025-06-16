@@ -306,9 +306,6 @@ body {
     align-items: center; /* Center on mobile */
     gap: 20px; /* Gap for mobile */
     padding: 20px; /* Mobile padding */
-    background: rgba(255,255,255,0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(20px);
 }
 @media (min-width: 768px) { /* md breakpoint */
     .nav-wireframe {
