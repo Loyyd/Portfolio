@@ -683,10 +683,104 @@ body {
       background: rgba(255,255,255,0.2); /* Lighter ripple for dark backgrounds */
 }
 
-
-@keyframes rippleAnimation {
-    to {
-        transform: scale(4);
-        opacity: 0;
+/* Add styles for ModelShowOne hero section to match the screenshot */
+.modelshowone-hero {
+    background: radial-gradient(ellipse at top left, #363636 60%, #222 100%);
+    border-radius: 24px;
+    padding: 60px 20px;
+    margin: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+}
+.modelshowone-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    align-items: center;
+}
+@media (min-width: 900px) {
+    .modelshowone-content {
+        flex-direction: row;
+        gap: 80px;
+        align-items: center;
+        justify-content: center;
     }
+}
+.modelshowone-3d {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 320px;
+    max-width: 420px;
+}
+.modelshowone-3d canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 380px;
+    max-height: 340px;
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+.modelshowone-text {
+    flex: 1 1 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 480px;
+    min-width: 280px;
+    margin-left: 0;
+}
+.modelshowone-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+    letter-spacing: 0.01em;
+}
+.modelshowone-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+}
+@media (min-width: 600px) {
+    .modelshowone-title {
+        font-size: 4rem;
+    }
+}
+.modelshowone-desc {
+    color: #bdbdbd;
+    font-size: 1.15rem;
+    margin-bottom: 36px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.modelshowone-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    letter-spacing: 0.01em;
+}
+.modelshowone-btn:hover {
+    background: #fff;
+    color: #222;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
