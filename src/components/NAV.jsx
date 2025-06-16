@@ -7,6 +7,7 @@ import TiktokIcon from '../assets/icons/tiktok.svg'; // Import TikTok icon
 
 const NAV = ({ toggleSection }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null); // null, 'instagram', 'youtube', or 'tiktok'
+  const [hoveredNavLink, setHoveredNavLink] = useState(null); // null, 'work', 'about', 'contact'
 
   const getIconStyle = (iconName) => {
     const baseStyle = { width: '24px', height: '24px', transition: 'opacity 0.3s ease' };
@@ -23,15 +24,47 @@ const NAV = ({ toggleSection }) => {
     return { ...baseStyle, ...specificStyle, opacity: 1 };
   };
 
+  const getNavLinkStyle = (linkName) => {
+    const baseStyle = { transition: 'opacity 0.3s ease' }; // Added transition
+    if (hoveredNavLink && hoveredNavLink !== linkName) {
+      return { ...baseStyle, opacity: 0.5 };
+    }
+    return { ...baseStyle, opacity: 1 };
+  };
+
   return (
     <div className="nav-wireframe">
         <div className="nav-logo">KONRAD KUNKEL</div>
         <div className="nav-menu-items"> {/* Container for all items on the right */}
             <div className="page-links"> {/* Group for WORK, ABOUT, CONTACT */}
-                <div className="nav-link" onClick={() => toggleSection('work')}>WORK</div>
-                <div className="nav-link" onClick={() => toggleSection('about')}>ABOUT</div>
+                <div 
+                  className="nav-link" 
+                  onClick={() => toggleSection('work')}
+                  onMouseEnter={() => setHoveredNavLink('work')}
+                  onMouseLeave={() => setHoveredNavLink(null)}
+                  style={getNavLinkStyle('work')}
+                >
+                  WORK
+                </div>
+                <div 
+                  className="nav-link" 
+                  onClick={() => toggleSection('about')}
+                  onMouseEnter={() => setHoveredNavLink('about')}
+                  onMouseLeave={() => setHoveredNavLink(null)}
+                  style={getNavLinkStyle('about')}
+                >
+                  ABOUT
+                </div>
                 {/* <div className="nav-link">SERVICES</div> */}
-                <div className="nav-link" onClick={() => toggleSection('contact')}>CONTACT</div>
+                <div 
+                  className="nav-link" 
+                  onClick={() => toggleSection('contact')}
+                  onMouseEnter={() => setHoveredNavLink('contact')}
+                  onMouseLeave={() => setHoveredNavLink(null)}
+                  style={getNavLinkStyle('contact')}
+                >
+                  CONTACT
+                </div>
             </div>
             <div className="nav-separator">|</div>
             <div className="social-icons">
