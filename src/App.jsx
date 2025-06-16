@@ -7,6 +7,7 @@ import HELM from './components/3D_Viewer';
 import About from "./pages/About"; // Updated import path
 import ReactDOM from 'react-dom/client';
 import ModelShowOne from "./components/ModelShowOne";
+import PortfolioShowcase from "./components/PortfolioShowcase";
 
 const portfolioItemsData = [
     { imageText: "Product Visualization", title: "Premium Product Renders", description: "Photorealistische Produktvisualisierung für E-Commerce und Marketing" },
@@ -114,27 +115,9 @@ function App() {
             ) : (
                 <>
                     <ModelShowOne />
-
-                <div className="portfolio-showcase fade-in-initial">
-                    <h2 className="showcase-title">PORTFOLIO INSPIRATION</h2>
-                    <p className="showcase-subtitle">So könnten deine 3D-Projekte präsentiert werden</p>
-                    
-                    <div className="portfolio-grid">
-                        {portfolioItemsData.map((item, index) => (
-                            <div className="portfolio-item" key={index}>
-                                <div className="portfolio-image">{item.imageText}</div>
-                                <div className="portfolio-content">
-                                    <h4>{item.title}</h4>
-                                    <p>{item.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                
-                <ThreeDExpertise />
-                <CTA/>
+                    <PortfolioShowcase />
+                    <ThreeDExpertise />
+                    <CTA/>
                 </>
             )}
         </div>
