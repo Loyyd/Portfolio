@@ -1,5 +1,7 @@
 import React from "react";
 import './NAV.css'; // Import the new CSS file
+import InstagramIcon from '../assets/icons/instagram.svg'; // Import the Instagram icon
+import YoutubeIcon from '../assets/icons/youtube.svg'; // Import the Youtube icon
 
 
 const NAV = ({ toggleSection }) => {
@@ -16,9 +18,13 @@ const NAV = ({ toggleSection }) => {
             <div className="nav-separator">|</div>
             <div className="social-icons">
                 {/* Placeholder for Instagram icon */}
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">IG</a>
-                {/* Placeholder for Twitter icon */}
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">TW</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <img src={InstagramIcon} alt="Instagram" style={{ width: '24px', height: '24px', filter: 'invert(100%)' }} />
+                </a>
+                {/* Placeholder for Youtube icon */}
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <img src={YoutubeIcon} alt="Youtube" style={{ width: '24px', height: '24px', filter: 'invert(100%)' }} />
+                </a>
             </div>
         </div>
     </div>

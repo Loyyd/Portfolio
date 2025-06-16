@@ -29,6 +29,7 @@
     border-radius: 20px;
     transition: all 0.3s ease; /* Smooth transition for hover effects */
     background-color: transparent;
+    font-weight: normal; /* Set font weight to regular */
 }
 
 .nav-link:hover {
