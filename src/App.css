@@ -23,8 +23,6 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--secondary);
-    color: var(--primary);
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }

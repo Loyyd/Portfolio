@@ -3,9 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #222; /* Dark background color as per image */
     color: white;
-    font-family: Arial, sans-serif; /* Example font */
 }
 
 .nav-logo {
@@ -26,10 +24,16 @@
     margin-left: 20px;
     cursor: pointer;
     text-transform: uppercase; /* As per image */
+    padding: 0.5rem 1rem; /* Added padding for better hover effect */
+    border-radius: 0; /* Ensure buttons are not round by default */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .nav-link:hover {
-    color: #aaa; /* Example hover effect */
+    background-color: #333; /* Slightly lighter background on hover */
+    border-radius: 20px; /* Make it round on hover */
+    transform: translateY(-3px); /* Lift up effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for more lift */
 }
 
 .nav-separator {
@@ -46,10 +50,16 @@
     margin-left: 15px;
     color: white;
     text-decoration: none;
+    padding: 0.5rem; /* Added padding for better hover effect */
+    border-radius: 0; /* Ensure icons are not round by default */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
     /* In a real scenario, you would use actual icons here */
     /* For example, using Font Awesome or SVG icons */
 }
 
 .social-icon:hover {
-    color: #aaa; /* Example hover effect */
+    background-color: #333; /* Slightly lighter background on hover */
+    border-radius: 50%; /* Make it round on hover */
+    transform: translateY(-3px); /* Lift up effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for more lift */
 }
