@@ -2,10 +2,11 @@ import React, { useState } from "react"; // Import useState
 import './NAV.css'; // Import the new CSS file
 import InstagramIcon from '../assets/icons/instagram.svg'; // Import the Instagram icon
 import YoutubeIcon from '../assets/icons/youtube.svg'; // Import the Youtube icon
+import TiktokIcon from '../assets/icons/tiktok.svg'; // Import TikTok icon
 
 
 const NAV = ({ toggleSection }) => {
-  const [hoveredIcon, setHoveredIcon] = useState(null); // null, 'instagram', or 'youtube'
+  const [hoveredIcon, setHoveredIcon] = useState(null); // null, 'instagram', 'youtube', or 'tiktok'
 
   const getIconStyle = (iconName) => {
     const baseStyle = { width: '24px', height: '24px', transition: 'opacity 0.3s ease' };
@@ -14,7 +15,7 @@ const NAV = ({ toggleSection }) => {
     if (iconName === 'instagram') {
       specificStyle = { filter: 'invert(100%)' };
     }
-    // YouTube icon is already white, no specific filter needed for its base color
+    // YouTube and TikTok icons are already white, no specific filter needed for their base color
 
     if (hoveredIcon && hoveredIcon !== iconName) {
       return { ...baseStyle, ...specificStyle, opacity: 0.5 };
@@ -53,6 +54,16 @@ const NAV = ({ toggleSection }) => {
                   onMouseLeave={() => setHoveredIcon(null)}
                 >
                     <img src={YoutubeIcon} alt="Youtube" style={getIconStyle('youtube')} />
+                </a>
+                <a 
+                  href="https://www.tiktok.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-icon"
+                  onMouseEnter={() => setHoveredIcon('tiktok')}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                >
+                    <img src={TiktokIcon} alt="TikTok" style={getIconStyle('tiktok')} />
                 </a>
             </div>
         </div>
