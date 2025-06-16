@@ -6,7 +6,7 @@ import NAV from "./components/NAV";
 import HELM from './components/3D_Viewer';
 import About from "./pages/About"; // Updated import path
 import ReactDOM from 'react-dom/client';
-import PortfolioSection from "./components/PortfolioSection";
+import ModelShowOne from "./components/ModelShowOne";
 
 const portfolioItemsData = [
     { imageText: "Product Visualization", title: "Premium Product Renders", description: "Photorealistische Produktvisualisierung für E-Commerce und Marketing" },
@@ -113,7 +113,7 @@ function App() {
                 <About />
             ) : (
                 <>
-                    <PortfolioSection />
+                    <ModelShowOne />
 
                 <div className="portfolio-showcase fade-in-initial">
                     <h2 className="showcase-title">PORTFOLIO INSPIRATION</h2>
