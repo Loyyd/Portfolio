@@ -1,0 +1,55 @@
+.nav-wireframe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222; /* Dark background color as per image */
+    color: white;
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.page-links {
+    display: flex;
+}
+
+.nav-link {
+    margin-left: 20px;
+    cursor: pointer;
+    text-transform: uppercase; /* As per image */
+}
+
+.nav-link:hover {
+    color: #aaa; /* Example hover effect */
+}
+
+.nav-separator {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #555; /* Color for the separator */
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    /* In a real scenario, you would use actual icons here */
+    /* For example, using Font Awesome or SVG icons */
+}
+
+.social-icon:hover {
+    color: #aaa; /* Example hover effect */
+}
