@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react"; // Import useState
 import './NAV.css'; // Import the new CSS file
 import InstagramIcon from '../assets/icons/instagram.svg'; // Import the Instagram icon
 import YoutubeIcon from '../assets/icons/youtube.svg'; // Import the Youtube icon
 
 
 const NAV = ({ toggleSection }) => {
+  const [hoveredIcon, setHoveredIcon] = useState(null); // null, 'instagram', or 'youtube'
+
+  const getIconStyle = (iconName) => {
+    const baseStyle = { width: '24px', height: '24px', transition: 'opacity 0.3s ease' };
+    let specificStyle = {};
+
+    if (iconName === 'instagram') {
+      specificStyle = { filter: 'invert(100%)' };
+    }
+    // YouTube icon is already white, no specific filter needed for its base color
+
+    if (hoveredIcon && hoveredIcon !== iconName) {
+      return { ...baseStyle, ...specificStyle, opacity: 0.5 };
+    }
+    return { ...baseStyle, ...specificStyle, opacity: 1 };
+  };
+
   return (
     <div className="nav-wireframe">
         <div className="nav-logo">KONRAD KUNKEL</div>
@@ -17,13 +34,25 @@ const NAV = ({ toggleSection }) => {
             </div>
             <div className="nav-separator">|</div>
             <div className="social-icons">
-                {/* Placeholder for Instagram icon */}
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <img src={InstagramIcon} alt="Instagram" style={{ width: '24px', height: '24px', filter: 'invert(100%)' }} />
+                <a 
+                  href="https://www.instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-icon"
+                  onMouseEnter={() => setHoveredIcon('instagram')}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                >
+                    <img src={InstagramIcon} alt="Instagram" style={getIconStyle('instagram')} />
                 </a>
-                {/* Placeholder for Youtube icon */}
-                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <img src={YoutubeIcon} alt="Youtube" style={{ width: '24px', height: '24px' }} />
+                <a 
+                  href="https://www.youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-icon"
+                  onMouseEnter={() => setHoveredIcon('youtube')}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                >
+                    <img src={YoutubeIcon} alt="Youtube" style={getIconStyle('youtube')} />
                 </a>
             </div>
         </div>
