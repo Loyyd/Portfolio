@@ -32,12 +32,6 @@
     font-weight: normal; /* Set font weight to regular */
 }
 
-.nav-link:hover {
-    /* background-color: #333; */ /* Slightly lighter background on hover */
-    /* transform: translateY(-3px); */ /* Lift up effect removed */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  *//* Optional: add shadow for more lift */
-}
-
 .nav-separator {
     margin-left: 20px;
     margin-right: 20px;
@@ -57,11 +51,4 @@
     transition: all 0.3s ease; /* Smooth transition for hover effects */
     /* In a real scenario, you would use actual icons here */
     /* For example, using Font Awesome or SVG icons */
-}
-
-.social-icon:hover {
-    /* background-color: #333; */ /* Removed */
-    /* transform: translateY(-3px); */ /* Removed */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */ /* Removed */
-    /* Retain other hover effects if any, or leave empty if these were all */
 }

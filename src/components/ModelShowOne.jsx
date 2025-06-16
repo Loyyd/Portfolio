@@ -2,7 +2,7 @@ import React from 'react';
 import HELM from './3D_Viewer';
 
 const ModelShowOne = () => (
-    <div className="wireframe-section fade-in-initial">
+    <div className="fade-in-initial">
         <h2 className="wireframe-title">PORTFOLIO</h2>
         <div className="wireframe">
             {/* <canvas> */}
