@@ -8,6 +8,7 @@ import About from "./pages/About"; // Updated import path
 import ReactDOM from 'react-dom/client';
 import ModelShowOne from "./components/ModelShowOne";
 import PortfolioShowcase from "./components/PortfolioShowcase";
+import Gallery from "./components/Gallery";
 
 const portfolioItemsData = [
     { imageText: "Product Visualization", title: "Premium Product Renders", description: "Photorealistische Produktvisualisierung für E-Commerce und Marketing" },
@@ -115,6 +116,7 @@ function App() {
             ) : (
                 <>
                     <ModelShowOne />
+                    <Gallery />
                     <PortfolioShowcase />
                     <ThreeDExpertise />
                     <CTA/>
