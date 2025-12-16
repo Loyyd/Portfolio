@@ -36,7 +36,18 @@ const NAV = ({ toggleSection, activeSection }) => {
     <div className="nav-wireframe">
         <div className="nav-logo">KONRAD KUNKEL</div>
         <div className="nav-menu-items"> {/* Container for all items on the right */}
-            <div className="page-links"> {/* Group for WORK, ABOUT, CONTACT */}
+            <div className="page-links"> {/* Group for HOME, PROJECTS, ABOUT, CONTACT */}
+                <div
+                  className={`nav-link ${activeSection === null ? 'active' : ''}`}
+                  onClick={() => toggleSection(null)}
+                  onMouseEnter={() => setHoveredNavLink('home')}
+                  onMouseLeave={() => setHoveredNavLink(null)}
+                  style={getNavLinkStyle('home')}
+                  aria-current={activeSection === null ? 'page' : undefined}
+                >
+                  HOME
+                </div>
+
                 <div 
                   className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`} 
                   onClick={() => toggleSection('projects')}

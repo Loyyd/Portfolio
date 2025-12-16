@@ -1,34 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import ThreeDExpertise from "./components/ThreeDExpertise";
-import CTA from "./components/CTA";
 import NAV from "./components/NAV";
-import HELM from './components/3D_Viewer';
-import About from "./pages/About"; // Updated import path
-import ReactDOM from 'react-dom/client';
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import ModelShowOne from "./components/ModelShowOne";
-import PortfolioShowcase from "./components/PortfolioShowcase";
-import Gallery from "./components/Gallery";
 import Projects from "./pages/Projects";
-
-const portfolioItemsData = [
-    { imageText: "Product Visualization", title: "Premium Product Renders", description: "Photorealistische Produktvisualisierung für E-Commerce und Marketing" },
-    { imageText: "Architectural Viz", title: "Architektur Visualisierung", description: "Realistische Gebäude-Renders und Innenraumvisualisierung" },
-    { imageText: "Character Design", title: "Character Modeling", description: "3D-Charaktere für Games, Animation und Film" },
-    { imageText: "Abstract Art", title: "Abstract 3D Art", description: "Experimentelle 3D-Kunst und Motion Graphics" },
-    { imageText: "Abstract Art", title: "Abstract 3D Art", description: "Experimentelle 3D-Kunst und Motion Graphics" },
-];
-
-
-
 
 function App() {
     const [activeSection, setActiveSection] = useState(null);
     const fadeInElementsRef = useRef([]); // To store refs for elements that need fade-in
 
-    // Function to toggle section visibility
+    // Function to set active section
     const toggleSection = (sectionId) => {
-        setActiveSection(prevSection => (prevSection === sectionId ? null : sectionId));
+        setActiveSection(sectionId);
     };
 
     // Effect for IntersectionObserver (fade-in animations)
@@ -117,17 +101,9 @@ function App() {
             ) : activeSection === 'projects' ? (
                 <Projects />
             ) : activeSection === 'contact' ? (
-                <div style={{ padding: '40px 0' }}>
-                    <CTA />
-                </div>
+                <Contact />
             ) : (
-                <>
-                    <ModelShowOne />
-                    <Gallery />
-                    <PortfolioShowcase />
-                    <ThreeDExpertise />
-                    <CTA/>
-                </>
+                <ModelShowOne />
             )}
         </div>
     );
