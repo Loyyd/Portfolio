@@ -3,7 +3,7 @@ import './App.css';
 import NAV from "./components/NAV";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import ModelShowOne from "./components/ModelShowOne";
+// Homepage content removed to clear the default landing page
 import Projects from "./pages/Projects";
 
 function App() {
@@ -103,7 +103,7 @@ function App() {
             ) : activeSection === 'contact' ? (
                 <Contact />
             ) : (
-                <ModelShowOne />
+                <main style={{ minHeight: '100vh' }} />
             )}
         </div>
     );
