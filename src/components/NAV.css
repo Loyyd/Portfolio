@@ -2,13 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.25rem;
     color: white;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, rgba(6,6,17,0.55), rgba(6,6,17,0.35));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .nav-menu-items {
@@ -21,21 +28,42 @@
 }
 
 .nav-link {
-    margin-left: 20px;
+    margin-left: 16px;
     cursor: pointer;
     color: white;
-    text-transform: uppercase; /* As per image */
-    padding: 0.5rem 1rem; /* Added padding for better hover effect */
-    /* border-radius: 20px; */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-transform: uppercase;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    transition: all 0.22s cubic-bezier(.2,.9,.2,1);
     background-color: transparent;
-    font-weight: normal; /* Set font weight to regular */
+    font-weight: 600;
+    font-size: 0.82rem;
+    position: relative;
 }
 
+.nav-link::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    bottom: 6px;
+    height: 3px;
+    width: 40%;
+    background: var(--accent, #7c5cff);
+    border-radius: 4px;
+    transition: transform 220ms ease;
+}
+.nav-link:hover::after{ transform: translateX(-50%) scaleX(1); }
+
+.nav-link.active{
+    font-weight: 700;
+}
+.nav-link.active::after{ transform: translateX(-50%) scaleX(1); opacity: 1; }
+
 .nav-separator {
-    margin-left: 20px;
-    margin-right: 20px;
-    color: #ffffff; /* Color for the separator */
+    margin-left: 18px;
+    margin-right: 18px;
+    color: rgba(255,255,255,0.12);
 }
 
 .social-icons {
@@ -43,12 +71,16 @@
 }
 
 .social-icon {
-    margin-left: 15px;
+    margin-left: 12px;
     color: white;
     text-decoration: none;
-    padding: 0.5rem; /* Added padding for better hover effect */
-    /* border-radius: 50%; */ /* Round shape removed */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    /* In a real scenario, you would use actual icons here */
-    /* For example, using Font Awesome or SVG icons */
+    padding: 0.35rem;
+    border-radius: 8px;
+    transition: transform 160ms ease, opacity 220ms ease;
+}
+.social-icon:hover{ transform: translateY(-3px); opacity: 0.95; }
+
+@media (max-width: 680px){
+    .nav-wireframe{ padding: 0.6rem 0.9rem; }
+    .nav-logo{ font-size: 0.98rem; }
 }

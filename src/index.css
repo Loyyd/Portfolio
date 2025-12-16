@@ -1,11 +1,64 @@
-/*  */
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #222; /* Updated background color */
-  color: white; /* Changed text color to white for better contrast on dark background */
+/* Design tokens and global styles */
+:root {
+  --bg-900: #060611;
+  --bg-800: #0b1220;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --accent: #7c5cff; /* purple accent */
+  --muted: rgba(255,255,255,0.75);
+  --muted-2: rgba(255,255,255,0.6);
 }
 
-/* You can add more global styles here */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, var(--bg-900), var(--bg-800));
+  color: #eaf0ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page container fallback (App.css defines .container too) */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero helpers */
+.site-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 20px 48px;
+  text-align: center;
+}
+.hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.03;
+  margin-bottom: 12px;
+}
+.hero-subtitle {
+  color: var(--muted-2);
+  max-width: 780px;
+  margin: 0 auto 20px;
+  font-weight: 400;
+}
+
+/* CTA small tweak (keeps existing .cta-button) */
+.cta-button { box-shadow: 0 6px 28px rgba(124,92,255,0.12); }
+
+/* Utility */
+.muted { color: var(--muted-2); }
+
+/* Small responsive spacing tweak */
+@media (min-width: 768px) {
+  .site-hero { padding-top: 120px; padding-bottom: 64px; }
+}

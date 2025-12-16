@@ -5,7 +5,7 @@ import YoutubeIcon from '../assets/icons/youtube.svg'; // Import the Youtube ico
 import TiktokIcon from '../assets/icons/tiktok.svg'; // Import TikTok icon
 
 
-const NAV = ({ toggleSection }) => {
+const NAV = ({ toggleSection, activeSection }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null); // null, 'instagram', 'youtube', or 'tiktok'
   const [hoveredNavLink, setHoveredNavLink] = useState(null); // null, 'work', 'about', 'contact'
 
@@ -38,30 +38,33 @@ const NAV = ({ toggleSection }) => {
         <div className="nav-menu-items"> {/* Container for all items on the right */}
             <div className="page-links"> {/* Group for WORK, ABOUT, CONTACT */}
                 <div 
-                  className="nav-link" 
-                  onClick={() => toggleSection('work')}
-                  onMouseEnter={() => setHoveredNavLink('work')}
+                  className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`} 
+                  onClick={() => toggleSection('projects')}
+                  onMouseEnter={() => setHoveredNavLink('projects')}
                   onMouseLeave={() => setHoveredNavLink(null)}
-                  style={getNavLinkStyle('work')}
+                  style={getNavLinkStyle('projects')}
+                  aria-current={activeSection === 'projects' ? 'page' : undefined}
                 >
-                  WORK
+                  PROJECTS
                 </div>
                 <div 
-                  className="nav-link" 
+                  className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} 
                   onClick={() => toggleSection('about')}
                   onMouseEnter={() => setHoveredNavLink('about')}
                   onMouseLeave={() => setHoveredNavLink(null)}
                   style={getNavLinkStyle('about')}
+                  aria-current={activeSection === 'about' ? 'page' : undefined}
                 >
                   ABOUT
                 </div>
                 {/* <div className="nav-link">SERVICES</div> */}
                 <div 
-                  className="nav-link" 
+                  className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} 
                   onClick={() => toggleSection('contact')}
                   onMouseEnter={() => setHoveredNavLink('contact')}
                   onMouseLeave={() => setHoveredNavLink(null)}
                   style={getNavLinkStyle('contact')}
+                  aria-current={activeSection === 'contact' ? 'page' : undefined}
                 >
                   CONTACT
                 </div>

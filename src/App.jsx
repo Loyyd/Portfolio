@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom/client';
 import ModelShowOne from "./components/ModelShowOne";
 import PortfolioShowcase from "./components/PortfolioShowcase";
 import Gallery from "./components/Gallery";
+import Projects from "./pages/Projects";
 
 const portfolioItemsData = [
     { imageText: "Product Visualization", title: "Premium Product Renders", description: "Photorealistische Produktvisualisierung für E-Commerce und Marketing" },
@@ -110,9 +111,15 @@ function App() {
 
     return (
         <div className="container">
-            <NAV toggleSection={toggleSection}/>
+            <NAV toggleSection={toggleSection} activeSection={activeSection} />
             {activeSection === 'about' ? (
                 <About />
+            ) : activeSection === 'projects' ? (
+                <Projects />
+            ) : activeSection === 'contact' ? (
+                <div style={{ padding: '40px 0' }}>
+                    <CTA />
+                </div>
             ) : (
                 <>
                     <ModelShowOne />

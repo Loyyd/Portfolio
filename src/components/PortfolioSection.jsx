@@ -5,13 +5,21 @@ const ModelShowOne = () => (
     <div className="wireframe-section fade-in-initial">
         <h2 className="wireframe-title">PORTFOLIO</h2>
         <div className="wireframe">
-            {/* <canvas> */}
             <HELM/>
-            {/* </canvas> */}
-            <div className="hero-wireframe">
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', color: 'var(--secondary)' }}>3D VISIONS BROUGHT TO LIFE</h2>
-                <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '1rem' }}>Premium 3D Modeling & Visualization</p>
-                <div className="hero-visual">Animated 3D Render</div>
+
+            <div className="hero-wireframe modelshowone-hero">
+                <div className="modelshowone-content">
+                    <div className="modelshowone-3d">
+                        <div className="hero-visual">Animated 3D Render</div>
+                    </div>
+                    <div className="modelshowone-text">
+                        <h3 className="hero-title" style={{ marginBottom: '6px' }}>3D Visions Brought To Life</h3>
+                        <p className="hero-subtitle">Premium 3D Modeling, product visualization and motion-ready assets for film, games and advertising. Clean visuals, fast delivery.</p>
+                        <div>
+                            <a href="#contact" className="cta-button">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="wireframe-element">
