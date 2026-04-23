@@ -2,6 +2,8 @@
 
 .site-shell {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-header {
@@ -17,6 +19,10 @@
   background: rgba(5, 11, 16, 0.84);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
+}
+
+main {
+  flex-grow: 1;
 }
 
 .brand-mark,
@@ -46,25 +52,34 @@
 .nav-link {
   min-width: 8.5rem;
   padding: 0.95rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: transparent;
   color: var(--text-soft);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible {
   color: var(--text-strong);
-  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-1px);
 }
 
 .nav-link.is-active {
-  background: linear-gradient(135deg, rgba(245, 137, 92, 0.26), rgba(117, 153, 255, 0.18));
   color: var(--text-strong);
-  box-shadow: inset 0 0 0 1px rgba(245, 137, 92, 0.28);
+}
+
+/* Hover effect for nav links */
+.site-nav:has(.nav-link:hover) .nav-link {
+  color: var(--text-soft);
+}
+
+.site-nav:has(.nav-link:hover) .nav-link:hover {
+  color: #f7f1e8;
+}
+
+.site-nav:has(.nav-link:hover) .nav-link:not(:hover) {
+  color: rgba(247, 241, 232, 0.25);
 }
 
 .nav-status {
@@ -161,17 +176,33 @@
     linear-gradient(90deg, #16100e 0%, #281916 52%, #120d0c 100%);
 }
 
+.page-band--feature::before {
+  background:
+    linear-gradient(90deg, rgba(4, 8, 13, 0.08) 0%, rgba(4, 8, 13, 0.02) 44%, rgba(4, 8, 13, 0.14) 100%);
+}
+
 .page-band-media {
   position: absolute;
   inset: 0;
   opacity: 0.18;
 }
 
-.page-band-media img {
+.page-band-media img,
+.page-band-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: saturate(0.95) contrast(1.02);
+}
+
+.feature-band-media {
+  opacity: 1;
+}
+
+.feature-band-media img,
+.feature-band-media video {
+  transform: scale(1);
+  filter: none;
 }
 
 .page-content {
@@ -298,6 +329,39 @@
   margin-bottom: 2rem;
 }
 
+.feature-panel {
+  width: min(37rem, 100%);
+  margin-left: auto;
+  padding: 2rem 2.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.8rem;
+  background: rgba(8, 16, 21, 0.3);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.feature-panel h2 {
+  margin: 0;
+  color: var(--text-strong);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  font-weight: 400;
+  line-height: 0.92;
+}
+
+.feature-panel p:last-of-type {
+  max-width: 32rem;
+  margin: 1rem 0 0;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.feature-cta {
+  display: inline-flex;
+  margin-top: 1.6rem;
+  text-decoration: none;
+}
+
 .section-copy h2 {
   max-width: 10ch;
   font-size: clamp(2.8rem, 7vw, 4.8rem);
@@ -421,7 +485,90 @@
     font-size: clamp(2.4rem, 13vw, 3.8rem);
   }
 
+  .feature-panel {
+    padding: 1.4rem;
+  }
+
+  .feature-panel h2 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+
   .gallery-card-media {
     height: 15rem;
+  }
+}
+
+/* Footer Styles */
+.site-footer {
+  width: 100%;
+  padding: 3rem 2rem;
+  background: rgba(5, 11, 16, 0.84);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.72;
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.social-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.social-links:has(.social-icon:hover) .social-icon:not(:hover) {
+  opacity: 0.4;
+}
+
+.footer-text {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding: 2rem 1.4rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
   }
 }

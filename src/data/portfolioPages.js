@@ -2,6 +2,8 @@ import catboticaBg from '../assets/images/projects/catbotica/catbotica-bg.webp';
 import catboticaSite from '../assets/images/projects/catbotica/Catbotica+Website.webp';
 import catboticaDiscord from '../assets/images/projects/catbotica/Catbotica+Discord.webp';
 import code8Poster from '../assets/images/projects/code-8part-2/code-8-part2.jpg';
+import gunTurretThumbnail from '../assets/images/features/gun-turret-thumbnail.jpg';
+import spiderModelingThumbnail from '../assets/images/features/spider-modeling-thumbnail.webp';
 import profileImage from '../assets/images/profile.jpg';
 import galleryRobot from '../assets/images/gallery_pictures/Robot_web02.jpg';
 import galleryTitan from '../assets/images/gallery_pictures/Titan-Pilot.jpg';
@@ -11,6 +13,7 @@ import galleryCreature from '../assets/images/gallery_pictures/TZOG2817_web.jpg'
 import blenderLogo from '../assets/logos/blender_logo.png';
 import vscodeLogo from '../assets/logos/vscode.png';
 import substanceLogo from '../assets/logos/substance.webp';
+import kineticRushVideo from '../assets/videos/kinetic-rush-challenge.mp4';
 
 export const portfolioPages = {
   '/3d': {
@@ -23,7 +26,43 @@ export const portfolioPages = {
     stats: ['Lookdev', 'Creature Frames', 'Cinematic Stills'],
     sections: [
       {
+        type: 'feature',
         theme: 'ember',
+        kicker: 'Featured Build',
+        heading: 'Gun Turret Thunder',
+        copy:
+          'A hard-surface turret study focused on layered mechanics, believable weight, and a more cinematic final presentation. This section uses the thumbnail as a full background so the project gets a stronger hero moment before the wider gallery begins.',
+        backgroundImage: gunTurretThumbnail,
+        youtubeLabel: 'Watch On YouTube',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Konrad+Kunkel+gun+turret+3D',
+      },
+      {
+        type: 'feature',
+        theme: 'steel',
+        kicker: 'Motion Challenge',
+        heading: 'Kinetic Rush',
+        copy:
+          'A high-energy animation challenge focusing on dynamic camera movement, fluid character physics, and the visual weight of momentum in a 3D space.',
+        backgroundVideo: kineticRushVideo,
+        youtubeLabel: 'Watch On YouTube',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Konrad+Kunkel+3D+Kinetic+Rush',
+      },
+      {
+        type: 'feature',
+        theme: 'steel',
+        kicker: 'Featured Build',
+        heading: 'Spider Modeling',
+        copy:
+          'A creature-driven modeling piece built around silhouette, surface detail, and the uneasy visual tension that makes spider designs memorable. The background treatment gives this project its own dedicated spotlight section.',
+        backgroundImage: spiderModelingThumbnail,
+        youtubeLabel: 'Open YouTube',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Konrad+Kunkel+spider+modeling',
+      },
+      {
+        theme: 'aurora',
         kicker: 'Featured',
         heading: 'Hero images with a wider studio-film feel.',
         copy:
@@ -35,7 +74,7 @@ export const portfolioPages = {
         ],
       },
       {
-        theme: 'steel',
+        theme: 'copper',
         kicker: 'Gallery',
         heading: 'A denser wall for experiments, alternate angles, and polished stills.',
         copy:
@@ -48,7 +87,7 @@ export const portfolioPages = {
         ],
       },
       {
-        theme: 'aurora',
+        theme: 'midnight',
         kicker: 'Toolkit',
         heading: 'Software and process cues to support the gallery.',
         copy:

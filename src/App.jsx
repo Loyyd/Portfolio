@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import PortfolioBand from './components/PortfolioBand';
 import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
 import { normalizePath, portfolioPages } from './data/portfolioPages';
 
 function App() {
@@ -95,6 +96,8 @@ function App() {
         {currentPage.sections.map((section) => (
           <PortfolioBand key={`${currentPage.label}-${section.heading}`} section={section} />
         ))}
+
+        <SiteFooter />
       </main>
     </div>
   );

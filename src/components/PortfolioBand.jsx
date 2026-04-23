@@ -1,4 +1,34 @@
 function PortfolioBand({ section }) {
+  if (section.type === 'feature') {
+    return (
+      <section className={`page-band page-band--feature page-band--${section.theme}`}>
+        <div className="page-band-media feature-band-media">
+          {section.backgroundVideo ? (
+            <video src={section.backgroundVideo} autoPlay muted loop playsInline />
+          ) : (
+            <img src={section.backgroundImage} alt={section.heading} />
+          )}
+        </div>
+
+        <div className="page-content">
+          <div className="feature-panel reveal">
+            <p className="eyebrow">{section.kicker}</p>
+            <h2>{section.heading}</h2>
+            <p>{section.copy}</p>
+            <a
+              className="primary-cta feature-cta"
+              href={section.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {section.youtubeLabel}
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className={`page-band page-band--${section.theme}`}>
       <div className="page-content">
