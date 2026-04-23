@@ -1,113 +1,103 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
-import NAV from "./components/NAV";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-// Homepage content removed to clear the default landing page
-import Projects from "./pages/Projects";
+import PortfolioBand from './components/PortfolioBand';
+import SiteHeader from './components/SiteHeader';
+import { normalizePath, portfolioPages } from './data/portfolioPages';
 
 function App() {
-    const [activeSection, setActiveSection] = useState(null);
-    const fadeInElementsRef = useRef([]); // To store refs for elements that need fade-in
+  const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
 
-    // Function to set active section
-    const toggleSection = (sectionId) => {
-        setActiveSection(sectionId);
+  useEffect(() => {
+    const targetPath = normalizePath(window.location.pathname);
+    if (targetPath !== window.location.pathname) {
+      window.history.replaceState({}, '', targetPath);
+    }
+    setCurrentPath(targetPath);
+
+    const handlePopState = () => {
+      setCurrentPath(normalizePath(window.location.pathname));
+      window.scrollTo({ top: 0, behavior: 'instant' });
     };
 
-    // Effect for IntersectionObserver (fade-in animations)
-    useEffect(() => {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Check if target is available before trying to access style
-                    if (entry.target && entry.target.style) {
-                         entry.target.style.animationDelay = '0.2s';
-                    }
-                    entry.target.classList.add('fade-in-active'); // Use a different class to avoid conflict with initial CSS
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-        
-        // Select all elements that should fade in
-        const elementsToObserve = document.querySelectorAll('.fade-in-initial');
-        fadeInElementsRef.current = Array.from(elementsToObserve);
-
-
-        fadeInElementsRef.current.forEach(el => {
-            if (el) observer.observe(el);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
         });
-
-        // Cleanup observer on component unmount
-        return () => {
-            fadeInElementsRef.current.forEach(el => {
-                if (el) observer.unobserve(el);
-            });
-        };
-    }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
-
-    // Effect for click ripple
-    // This effect attaches event listeners to relevant elements for the ripple effect.
-    useEffect(() => {
-        const rippleElements = document.querySelectorAll('.section-card, .nav-link, .cta-button');
-
-        const handleRippleClick = function(e) {
-            // 'this' refers to the element that was clicked
-            const ripple = document.createElement('div');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            // Calculate position of the click relative to the element
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
-            // Style the ripple element
-            ripple.style.width = ripple.style.height = `${size}px`;
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            ripple.classList.add('ripple-effect'); // Add class for animation
-            
-            this.appendChild(ripple); // Add ripple to the clicked element
-            
-            // Remove ripple after animation
-            ripple.addEventListener('animationend', () => {
-                ripple.remove();
-            });
-        };
-
-        rippleElements.forEach(element => {
-            element.addEventListener('click', handleRippleClick);
-        });
-
-        // Cleanup: remove event listeners when component unmounts
-        return () => {
-            rippleElements.forEach(element => {
-                element.removeEventListener('click', handleRippleClick);
-            });
-        };
-    }, []); // Empty dependency array: run once on mount, cleanup on unmount
-
-    return (
-        <div className="container">
-            <NAV toggleSection={toggleSection} activeSection={activeSection} />
-            {activeSection === 'about' ? (
-                <About />
-            ) : activeSection === 'projects' ? (
-                <Projects />
-            ) : activeSection === 'contact' ? (
-                <Contact />
-            ) : (
-                <main style={{ minHeight: '100vh' }} />
-            )}
-        </div>
+      },
+      { threshold: 0.16 }
     );
+
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach((element) => observer.observe(element));
+
+    return () => {
+      elements.forEach((element) => observer.unobserve(element));
+      observer.disconnect();
+    };
+  }, [currentPath]);
+
+  const currentPage = useMemo(() => portfolioPages[currentPath], [currentPath]);
+
+  const navigateTo = (path) => {
+    if (path === currentPath) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <div className="site-shell">
+      <SiteHeader currentPath={currentPath} pages={portfolioPages} onNavigate={navigateTo} />
+
+      <main>
+        <section className="page-hero page-band page-band--hero">
+          <div className="page-band-media">
+            <img src={currentPage.heroImage} alt={currentPage.label} />
+          </div>
+          <div className="page-content page-hero-layout">
+            <div className="hero-copy reveal">
+              <p className="eyebrow">{currentPage.eyebrow}</p>
+              <h1>{currentPage.title}</h1>
+              <p className="hero-text">{currentPage.intro}</p>
+              <div className="hero-actions">
+                <button className="primary-cta" type="button" onClick={() => navigateTo('/3d')}>
+                  See 3D
+                </button>
+                <button className="secondary-cta" type="button" onClick={() => navigateTo('/coding')}>
+                  See Coding
+                </button>
+              </div>
+            </div>
+
+            <aside className="hero-stats reveal">
+              {currentPage.stats.map((stat) => (
+                <div key={stat}>
+                  <span>Focus</span>
+                  <strong>{stat}</strong>
+                </div>
+              ))}
+            </aside>
+          </div>
+        </section>
+
+        {currentPage.sections.map((section) => (
+          <PortfolioBand key={`${currentPage.label}-${section.heading}`} section={section} />
+        ))}
+      </main>
+    </div>
+  );
 }
 
 export default App;
-
