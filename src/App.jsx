@@ -65,31 +65,43 @@ function App() {
       <main>
         <section className="page-hero page-band page-band--hero">
           <div className="page-band-media">
-            <img src={currentPage.heroImage} alt={currentPage.label} />
+            {currentPage.heroVideo ? (
+              <video
+                src={currentPage.heroVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label={currentPage.label}
+              />
+            ) : (
+              <img src={currentPage.heroImage} alt={currentPage.label} />
+            )}
           </div>
           <div className="page-content page-hero-layout">
             <div className="hero-copy reveal">
               <p className="eyebrow">{currentPage.eyebrow}</p>
-              <h1>{currentPage.title}</h1>
-              <p className="hero-text">{currentPage.intro}</p>
+              {currentPage.title ? <h1>{currentPage.title}</h1> : null}
+              {currentPage.intro ? <p className="hero-text">{currentPage.intro}</p> : null}
               <div className="hero-actions">
-                <button className="primary-cta" type="button" onClick={() => navigateTo('/3d')}>
-                  See 3D
+                <button
+                  className="hero-nav-button hero-nav-button--solid"
+                  type="button"
+                  onClick={() => navigateTo('/3d')}
+                >
+                  <span>3D</span>
+                  <strong>Enter Gallery</strong>
                 </button>
-                <button className="secondary-cta" type="button" onClick={() => navigateTo('/coding')}>
-                  See Coding
+                <button
+                  className="hero-nav-button hero-nav-button--outline"
+                  type="button"
+                  onClick={() => navigateTo('/coding')}
+                >
+                  <span>Coding</span>
+                  <strong>View Projects</strong>
                 </button>
               </div>
             </div>
-
-            <aside className="hero-stats reveal">
-              {currentPage.stats.map((stat) => (
-                <div key={stat}>
-                  <span>Focus</span>
-                  <strong>{stat}</strong>
-                </div>
-              ))}
-            </aside>
           </div>
         </section>
 

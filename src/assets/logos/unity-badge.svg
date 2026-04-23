@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Unity</title>
+  <desc id="desc">Stylized Unity wordmark badge</desc>
+  <rect width="512" height="512" rx="96" fill="#101820"/>
+  <path
+    fill="#fff"
+    d="M256 104 159 160l38 66 59-34 59 34 38-66-97-56Zm-97 248 97 56 97-56-38-66-59 34-59-34-38 66Zm-24-169-57 98 57 98h76v-76h-45l-19-22 19-22h45v-76h-76Zm242 0h-76v76h45l19 22-19 22h-45v76h76l57-98-57-98Z"
+  />
+  <text
+    x="256"
+    y="466"
+    text-anchor="middle"
+    fill="#fff"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="46"
+    font-weight="700"
+    letter-spacing="8"
+  >
+    UNITY
+  </text>
+</svg>

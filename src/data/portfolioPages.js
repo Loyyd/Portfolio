@@ -1,28 +1,101 @@
 import catboticaBg from '../assets/images/projects/catbotica/catbotica-bg.webp';
-import catboticaSite from '../assets/images/projects/catbotica/Catbotica+Website.webp';
-import catboticaDiscord from '../assets/images/projects/catbotica/Catbotica+Discord.webp';
-import code8Poster from '../assets/images/projects/code-8part-2/code-8-part2.jpg';
+import catboticaPromoBackground from '../assets/images/projects/catbotica/catbotica-promo-background.jpg';
+import catboticaLogoWhite from '../assets/images/projects/catbotica/catbotica-logo-white.png';
+import catboticaWebsiteButton from '../assets/images/projects/catbotica/catbotica-website-button.png';
+import catboticaDiscordButton from '../assets/images/projects/catbotica/catbotica-discord-button.png';
 import gunTurretThumbnail from '../assets/images/features/gun-turret-thumbnail.jpg';
 import spiderModelingThumbnail from '../assets/images/features/spider-modeling-thumbnail.webp';
+import counterPlatformBackground from '../assets/images/projects/accounta/counter.png';
 import profileImage from '../assets/images/profile.jpg';
-import galleryRobot from '../assets/images/gallery_pictures/Robot_web02.jpg';
 import galleryTitan from '../assets/images/gallery_pictures/Titan-Pilot.jpg';
-import gallerySchool from '../assets/images/gallery_pictures/Thinkmore+TED+Ed+-+06.jpg';
 import gallerySuperbodies from '../assets/images/gallery_pictures/SuperbodiesV08.jpg';
 import galleryCreature from '../assets/images/gallery_pictures/TZOG2817_web.jpg';
 import blenderLogo from '../assets/logos/blender_logo.png';
-import vscodeLogo from '../assets/logos/vscode.png';
 import substanceLogo from '../assets/logos/substance.webp';
+import unityLogo from '../assets/logos/unity-badge.svg';
+import trailerVideo from '../assets/videos/trailer.mp4';
 import kineticRushVideo from '../assets/videos/kinetic-rush-challenge.mp4';
+import makingWebgameVideo from '../assets/videos/making-a-3d-webgame.mp4';
+import cosmicWatersTrailerVideo from '../assets/videos/cosmic-waters-game-jam.mp4';
+import definitelyNotLegoChaosVideo from '../assets/videos/definitely-not-lego-chaos.mp4';
+import neilosSneakPeekVideo from '../assets/videos/neilos-catbotica-sneak-peek.mp4';
 
 export const portfolioPages = {
+  '/about': {
+    label: 'About',
+    eyebrow: 'About',
+    title: 'Konrad Kunkel.',
+    intro:
+      'I work across 3D art, game projects, and frontend builds, with a focus on strong atmosphere, interactive presentation, and polished visual storytelling.',
+    heroImage: profileImage,
+    heroActions: [
+      {
+        path: '/3d',
+        eyebrow: '3D',
+        label: 'Enter Gallery',
+        variant: 'hero-nav-button--solid',
+      },
+      {
+        path: '/coding',
+        eyebrow: 'Coding',
+        label: 'View Projects',
+        variant: 'hero-nav-button--outline',
+      },
+    ],
+    sections: [
+      {
+        theme: 'midnight',
+        kicker: 'Overview',
+        heading: 'A portfolio built around visual craft, playable ideas, and product-focused execution.',
+        copy:
+          'This page gives a quick read on the main areas I work in, so visitors can get context before moving deeper into the 3D, Gamedev, or Coding sections.',
+        cards: [
+          {
+            title: '3D Art',
+            meta: 'Lookdev + Worldbuilding',
+            image: galleryTitan,
+            description:
+              'Cinematic stills, creature work, modeling studies, and atmosphere-first visual storytelling.',
+          },
+          {
+            title: 'Gamedev',
+            meta: 'Playable Worlds',
+            image: catboticaBg,
+            description:
+              'Prototypes, game jam collaborations, and interactive environments built around mood and exploration.',
+          },
+          {
+            title: 'Coding',
+            meta: 'Frontend + Tools',
+            image: counterPlatformBackground,
+            description:
+              'Interfaces and technical builds shaped by both product thinking and visual presentation.',
+          },
+        ],
+      },
+    ],
+  },
   '/3d': {
     label: '3D',
     eyebrow: '3D Direction',
-    title: 'Sculpted frames, atmospheric look-dev, and image-led worldbuilding.',
+    title: 'Cinematic 3D Worlds.',
     intro:
       'A 3D-focused gallery page built around creature work, cinematic stills, and environment-heavy presentation.',
-    heroImage: galleryTitan,
+    heroVideo: trailerVideo,
+    heroActions: [
+      {
+        path: '/3d',
+        eyebrow: '3D',
+        label: 'Enter Gallery',
+        variant: 'hero-nav-button--solid',
+      },
+      {
+        path: '/coding',
+        eyebrow: 'Coding',
+        label: 'View Projects',
+        variant: 'hero-nav-button--outline',
+      },
+    ],
     stats: ['Lookdev', 'Creature Frames', 'Cinematic Stills'],
     sections: [
       {
@@ -33,6 +106,7 @@ export const portfolioPages = {
         copy:
           'A hard-surface turret study focused on layered mechanics, believable weight, and a more cinematic final presentation. This section uses the thumbnail as a full background so the project gets a stronger hero moment before the wider gallery begins.',
         backgroundImage: gunTurretThumbnail,
+        mediaRatio: '16 / 9',
         youtubeLabel: 'Watch On YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=Konrad+Kunkel+gun+turret+3D',
@@ -45,9 +119,23 @@ export const portfolioPages = {
         copy:
           'A high-energy animation challenge focusing on dynamic camera movement, fluid character physics, and the visual weight of momentum in a 3D space.',
         backgroundVideo: kineticRushVideo,
+        mediaRatio: '16 / 9',
         youtubeLabel: 'Watch On YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=Konrad+Kunkel+3D+Kinetic+Rush',
+      },
+      {
+        type: 'feature',
+        theme: 'ember',
+        kicker: 'Animation Clash',
+        heading: 'LEGO Madara vs Might Guy',
+        copy:
+          'A brick-built fight beat with stronger silhouette reads, quick impact posing, and a more playful action rhythm. This section uses the MP4 as a full background so the animation lands like a proper showcase moment inside the 3D page.',
+        backgroundVideo: definitelyNotLegoChaosVideo,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'Search On YouTube',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=LEGO+Madara+vs+Might+Guy+Animation',
       },
       {
         type: 'feature',
@@ -57,45 +145,38 @@ export const portfolioPages = {
         copy:
           'A creature-driven modeling piece built around silhouette, surface detail, and the uneasy visual tension that makes spider designs memorable. The background treatment gives this project its own dedicated spotlight section.',
         backgroundImage: spiderModelingThumbnail,
+        mediaRatio: '16 / 9',
         youtubeLabel: 'Open YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=Konrad+Kunkel+spider+modeling',
       },
       {
-        theme: 'aurora',
-        kicker: 'Featured',
-        heading: 'Hero images with a wider studio-film feel.',
-        copy:
-          'These cards lean into strong silhouettes, moody palettes, and the kind of framing that sells range quickly.',
-        cards: [
-          { title: 'Titan Pilot', meta: 'Key Art', image: galleryTitan },
-          { title: 'Creature Study', meta: 'Character Surface', image: galleryCreature },
-          { title: 'Robot Closeup', meta: 'Hard-Surface Detail', image: galleryRobot },
-        ],
-      },
-      {
-        theme: 'copper',
-        kicker: 'Gallery',
-        heading: 'A denser wall for experiments, alternate angles, and polished stills.',
-        copy:
-          'This section works like a visual proof-board: fast to scan, but still dramatic enough to feel authored.',
-        cards: [
-          { title: 'Superbodies', meta: 'Render Still', image: gallerySuperbodies },
-          { title: 'Editorial Frame', meta: 'Design Shot', image: code8Poster },
-          { title: 'Education Visual', meta: 'Motion Asset', image: gallerySchool },
-          { title: 'Catbotica Environment', meta: 'Worldbuilding', image: catboticaBg },
-        ],
-      },
-      {
         theme: 'midnight',
-        kicker: 'Toolkit',
-        heading: 'Software and process cues to support the gallery.',
-        copy:
-          'The page still feels visual-first, but it now gives enough technical context for art direction or studio roles.',
+        kicker: 'Software',
+        layout: 'software-strip',
+        heading: 'The software that I use',
         cards: [
-          { title: 'Blender', meta: 'Modeling + Rendering', image: blenderLogo, fit: 'contain' },
-          { title: 'Substance', meta: 'Surfacing', image: substanceLogo, fit: 'contain' },
-          { title: 'Visual Research', meta: 'Reference Systems', image: profileImage },
+          {
+            title: 'Blender',
+            meta: 'Modeling + Animation',
+            image: blenderLogo,
+            fit: 'contain',
+            url: 'https://www.blender.org/',
+          },
+          {
+            title: 'Substance Painter',
+            meta: 'Texturing + Materials',
+            image: substanceLogo,
+            fit: 'contain',
+            url: 'https://www.adobe.com/products/substance3d-painter.html',
+          },
+          {
+            title: 'Unity',
+            meta: 'Real-Time Presentation',
+            image: unityLogo,
+            fit: 'contain',
+            url: 'https://unity.com/',
+          },
         ],
       },
     ],
@@ -103,47 +184,86 @@ export const portfolioPages = {
   '/gamedev': {
     label: 'Gamedev',
     eyebrow: 'Game Worlds',
-    title: 'Playable ideas, game-facing art, and launch visuals with more energy.',
+    title: 'Playable Worlds.',
     intro:
-      'A page for mechanics, pitch visuals, and game-style presentation with larger bands and bolder contrast shifts.',
+      'Game projects, prototypes, and worldbuilding collected into a tighter, more cinematic showcase.',
     heroImage: catboticaBg,
+    heroActions: [
+      {
+        path: '/gamedev',
+        eyebrow: 'Gamedev',
+        label: 'See Projects',
+        variant: 'hero-nav-button--solid',
+      },
+      {
+        path: '/about',
+        eyebrow: 'About',
+        label: 'Meet Konrad',
+        variant: 'hero-nav-button--outline',
+      },
+    ],
     stats: ['Prototypes', 'Pitch Art', 'Launch Assets'],
     sections: [
       {
-        theme: 'violet',
-        kicker: 'Pitch Frames',
-        heading: 'A front section for high-concept game worlds and campaign art.',
+        type: 'feature',
+        theme: 'ocean',
+        kicker: 'Playable Prototype',
+        heading: 'Enter The Build',
         copy:
-          'This first band is tuned for key art, splash screens, and strong first-impression images with space for hooks.',
-        cards: [
-          { title: 'Catbotica Universe', meta: 'Original IP', image: catboticaBg },
-          { title: 'Community Portal', meta: 'Launch Surface', image: catboticaSite },
-          { title: 'Discord Drop', meta: 'Audience Onboarding', image: catboticaDiscord },
-        ],
+          'A fast-opening prototype section built to feel more like a playable world reveal than a devlog. The camera motion, environment framing, and in-engine energy make this a stronger first impression for the Gamedev page.',
+        backgroundVideo: makingWebgameVideo,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'Watch Prototype',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Konrad+Kunkel+making+a+3D+webgame',
       },
       {
-        theme: 'forest',
-        kicker: 'Systems',
-        heading: 'Room for mechanics, factions, loops, and progression beats.',
-        copy:
-          'The structure here is meant for game design thinking: not just pretty shots, but visualized systems and player fantasy.',
-        cards: [
-          { title: 'Combat Moodboard', meta: 'Player Fantasy', image: galleryTitan },
-          { title: 'Enemy Variant', meta: 'Encounter Design', image: galleryCreature },
-          { title: 'World Event', meta: 'Narrative Hook', image: code8Poster },
-          { title: 'Reward Scene', meta: 'Progression Beat', image: gallerySuperbodies },
-        ],
-      },
-      {
+        type: 'feature',
         theme: 'sunset',
-        kicker: 'Presentation',
-        heading: 'A closing band for trailers, store capsules, and release-facing assets.',
+        kicker: 'Game Jam Project',
+        heading: 'Cosmic Waters',
         copy:
-          'This is where the page shifts from concepting to market-facing communication and cleaner showcase polish.',
-        cards: [
-          { title: 'Store Capsule', meta: 'Marketing Visual', image: galleryRobot },
-          { title: 'Promo Scene', meta: 'Launch Moment', image: gallerySchool },
-          { title: 'Cover Exploration', meta: 'Packaging', image: catboticaBg },
+          'A trailer section for Cosmic Waters, an Epic Games game jam project I worked on with friends. This keeps the Gamedev page focused on collaborative game work with a second full-bleed showcase moment.',
+        backgroundVideo: cosmicWatersTrailerVideo,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'Watch Trailer',
+        youtubeUrl: '#',
+      },
+      {
+        type: 'feature',
+        theme: 'forest',
+        kicker: 'Catbotica Peek',
+        heading: 'Neilos: Former Home of the Catbots',
+        copy:
+          "A look into the environmental storytelling and level design for Neilos, the ancestral home of the Catbots. This experiment focuses on building atmospheric depth and visual history within a playable space for the Catbotica universe.",
+        backgroundVideo: neilosSneakPeekVideo,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'Watch Sneak Peek',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Catbotica+Neilos+Sneak+Peek',
+      },
+      {
+        type: 'feature',
+        theme: 'ocean',
+        kicker: 'Catbotica Promo',
+        heading: 'Catbotica',
+        copy:
+          'A direct promo band for the Catbotica universe, focused on the hand-drawn generative collection, its story world, and the community around it. This section mirrors the Motiontonic promo with the same backdrop and the same two destination buttons.',
+        backgroundImage: catboticaPromoBackground,
+        brandImage: catboticaLogoWhite,
+        brandImageAlt: 'Catbotica',
+        mediaRatio: '16 / 9',
+        actions: [
+          {
+            label: 'Catbotica Website',
+            url: 'https://catbotica.com',
+            image: catboticaWebsiteButton,
+          },
+          {
+            label: 'Catbotica Discord',
+            url: 'https://discord.gg/catbotica',
+            image: catboticaDiscordButton,
+          },
         ],
       },
     ],
@@ -151,48 +271,37 @@ export const portfolioPages = {
   '/coding': {
     label: 'Coding',
     eyebrow: 'Coding Work',
-    title: 'Interfaces, tools, and technical builds presented like polished case studies.',
+    title: 'Product builds, finance tools, and interactive platforms with a cleaner showcase focus.',
     intro:
-      'A coding page with gallery-style panels for product thinking, technical stack cues, and feature storytelling.',
+      'A coding page centered on standout shipped work, with room for platform screenshots, product framing, and clearer project context.',
     heroImage: profileImage,
+    heroActions: [
+      {
+        path: '/coding',
+        eyebrow: 'Coding',
+        label: 'View Projects',
+        variant: 'hero-nav-button--solid',
+      },
+      {
+        path: '/about',
+        eyebrow: 'About',
+        label: 'About Konrad',
+        variant: 'hero-nav-button--outline',
+      },
+    ],
     stats: ['Frontend', 'Tools', 'Creative Tech'],
     sections: [
       {
+        type: 'feature',
         theme: 'midnight',
-        kicker: 'Builds',
-        heading: 'Case-study cards for web interfaces, dashboards, and creative tools.',
+        kicker: 'Finance Platform',
+        heading: 'Counter',
         copy:
-          'Instead of a plain project list, this page frames coding work as finished product experiences with visual hierarchy.',
-        cards: [
-          { title: 'Editor Experience', meta: 'Frontend System', image: vscodeLogo, fit: 'contain' },
-          { title: 'Creative Pipeline', meta: 'Tooling', image: substanceLogo, fit: 'contain' },
-          { title: 'Portfolio Engine', meta: 'React + Vite', image: profileImage },
-        ],
-      },
-      {
-        theme: 'ocean',
-        kicker: 'Screens',
-        heading: 'A wider gallery band for UI states, feature slices, and implementation storytelling.',
-        copy:
-          'The section background shifts cooler here so code projects read cleaner, sharper, and slightly more product-led.',
-        cards: [
-          { title: 'Project Gallery UI', meta: 'Routing + Layout', image: catboticaSite },
-          { title: 'Content System', meta: 'Reusable Components', image: catboticaDiscord },
-          { title: 'Media Page', meta: 'Responsive Build', image: code8Poster },
-          { title: 'Visual Module', meta: 'Animation Layer', image: galleryRobot },
-        ],
-      },
-      {
-        theme: 'copper',
-        kicker: 'Stack',
-        heading: 'A final section that anchors the page with workflow and technologies.',
-        copy:
-          'This band gives the coding page enough substance for recruiters without losing the overall image-forward direction.',
-        cards: [
-          { title: 'React Frontend', meta: 'Component Design', image: vscodeLogo, fit: 'contain' },
-          { title: 'Blender Integration', meta: 'Creative Pipeline', image: blenderLogo, fit: 'contain' },
-          { title: 'Design Systems', meta: 'Visual Consistency', image: gallerySchool },
-        ],
+          'An accounting platform built to help users track finances, organize records, and get a clearer view of their money in one interface. This section uses the product screen as a full background so the coding page opens on a more concrete software case study.',
+        backgroundImage: counterPlatformBackground,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'View Project',
+        youtubeUrl: '#',
       },
     ],
   },
