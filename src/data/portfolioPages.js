@@ -1,19 +1,16 @@
 import catboticaBg from '../assets/images/projects/catbotica/catbotica-bg.webp';
-import catboticaPromoBackground from '../assets/images/projects/catbotica/catbotica-promo-background.jpg';
-import catboticaLogoWhite from '../assets/images/projects/catbotica/catbotica-logo-white.png';
-import catboticaWebsiteButton from '../assets/images/projects/catbotica/catbotica-website-button.png';
-import catboticaDiscordButton from '../assets/images/projects/catbotica/catbotica-discord-button.png';
+import catboticaLogoWhite from '../assets/images/projects/catbotica/catbotica_logo_white.webp';
+import catboticaWebsiteButton from '../assets/images/projects/catbotica/Catbotica+Website.webp';
+import catboticaDiscordButton from '../assets/images/projects/catbotica/Catbotica+Discord.webp';
 import gunTurretThumbnail from '../assets/images/features/gun-turret-thumbnail.jpg';
 import spiderModelingThumbnail from '../assets/images/features/spider-modeling-thumbnail.webp';
 import counterPlatformBackground from '../assets/images/projects/accounta/counter.png';
-import profileImage from '../assets/images/profile.jpg';
 import galleryTitan from '../assets/images/gallery_pictures/Titan-Pilot.jpg';
-import gallerySuperbodies from '../assets/images/gallery_pictures/SuperbodiesV08.jpg';
-import galleryCreature from '../assets/images/gallery_pictures/TZOG2817_web.jpg';
 import blenderLogo from '../assets/logos/blender_logo.png';
 import substanceLogo from '../assets/logos/substance.webp';
 import unityLogo from '../assets/logos/unity-badge.svg';
 import trailerVideo from '../assets/videos/trailer.mp4';
+import chasmsCallRenderChallengeVideo from '../assets/videos/chasms-call-3d-render-challenge.mp4';
 import kineticRushVideo from '../assets/videos/kinetic-rush-challenge.mp4';
 import makingWebgameVideo from '../assets/videos/making-a-3d-webgame.mp4';
 import cosmicWatersTrailerVideo from '../assets/videos/cosmic-waters-game-jam.mp4';
@@ -27,7 +24,7 @@ export const portfolioPages = {
     title: 'Konrad Kunkel.',
     intro:
       'I work across 3D art, game projects, and frontend builds, with a focus on strong atmosphere, interactive presentation, and polished visual storytelling.',
-    heroImage: profileImage,
+    heroImage: galleryTitan,
     heroActions: [
       {
         path: '/3d',
@@ -123,6 +120,19 @@ export const portfolioPages = {
         youtubeLabel: 'Watch On YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=Konrad+Kunkel+3D+Kinetic+Rush',
+      },
+      {
+        type: 'feature',
+        theme: 'violet',
+        kicker: '3D Render Challenge',
+        heading: "Chasm's Call",
+        copy:
+          'A stylized 3D render challenge built around atmosphere, scale, and a strong cinematic read. The piece focuses on using lighting, framing, and environment mood to sell the story of the scene quickly.',
+        backgroundVideo: chasmsCallRenderChallengeVideo,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'Watch On YouTube',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Konrad+Kunkel+Chasm%27s+Call+3D+Render+Challenge',
       },
       {
         type: 'feature',
@@ -245,14 +255,15 @@ export const portfolioPages = {
       {
         type: 'feature',
         theme: 'ocean',
-        kicker: 'Catbotica Promo',
+        kicker: '',
         heading: 'Catbotica',
         copy:
           'A direct promo band for the Catbotica universe, focused on the hand-drawn generative collection, its story world, and the community around it. This section mirrors the Motiontonic promo with the same backdrop and the same two destination buttons.',
-        backgroundImage: catboticaPromoBackground,
+        backgroundImage: catboticaBg,
         brandImage: catboticaLogoWhite,
         brandImageAlt: 'Catbotica',
         mediaRatio: '16 / 9',
+        panelVariant: 'catbotica-promo',
         actions: [
           {
             label: 'Catbotica Website',
@@ -274,7 +285,7 @@ export const portfolioPages = {
     title: 'Product builds, finance tools, and interactive platforms with a cleaner showcase focus.',
     intro:
       'A coding page centered on standout shipped work, with room for platform screenshots, product framing, and clearer project context.',
-    heroImage: profileImage,
+    heroImage: galleryTitan,
     heroActions: [
       {
         path: '/coding',

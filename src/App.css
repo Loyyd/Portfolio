@@ -92,8 +92,8 @@ main {
 }
 
 .nav-social-links .social-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .page-band {
@@ -115,9 +115,25 @@ main {
   justify-content: center;
 }
 
-.page-band--software-strip .page-content {
+.page-band--software-strip {
+  padding: 2rem 0 2.15rem;
+}
+
+.page-band:not(.page-hero):not(.page-band--feature).page-band--software-strip .page-content {
   min-height: 0;
-  justify-content: flex-start;
+  display: block;
+}
+
+.page-band--software-strip .section-copy {
+  margin-bottom: 1.15rem;
+}
+
+.page-band--software-strip .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.page-band--software-strip .section-copy h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
 }
 
 .page-band--feature {
@@ -374,6 +390,29 @@ main {
   backdrop-filter: blur(12px);
 }
 
+.page-band--catbotica-promo .page-content {
+  justify-content: flex-start;
+}
+
+.feature-panel--catbotica-promo {
+  width: min(34rem, 100%);
+  margin-left: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.feature-panel--catbotica-promo .feature-brand {
+  width: min(100%, 22rem);
+}
+
+.feature-panel--catbotica-promo .feature-image-cta {
+  width: min(10.5rem, 46%);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -470,13 +509,13 @@ main {
 .software-item-icon {
   display: grid;
   place-items: center;
-  min-height: 6.5rem;
-  margin-bottom: 0.65rem;
+  min-height: 3.25rem;
+  margin-bottom: 0.45rem;
 }
 
 .software-item-icon img {
   display: block;
-  width: min(100%, 8.5rem);
+  width: min(100%, 7.5rem);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.28));
@@ -618,8 +657,8 @@ main {
   }
 
   .nav-social-links .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .page-hero-layout,
@@ -639,6 +678,10 @@ main {
 @media (max-width: 720px) {
   .page-band {
     padding: 4.2rem 0;
+  }
+
+  .page-band--software-strip {
+    padding: 1.65rem 0 1.85rem;
   }
 
   .page-content {
@@ -683,7 +726,7 @@ main {
   }
 
   .software-item-icon {
-    min-height: 5.5rem;
+    min-height: 4.75rem;
   }
 
   .gallery-card-media {
@@ -717,8 +760,8 @@ main {
 }
 
 .social-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -761,7 +804,7 @@ main {
   }
 
   .social-icon {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 }

@@ -1,8 +1,11 @@
 function PortfolioBand({ section }) {
+  const featureVariantClass = section.panelVariant ? ` page-band--${section.panelVariant}` : '';
+  const panelVariantClass = section.panelVariant ? ` feature-panel--${section.panelVariant}` : '';
+
   if (section.type === 'feature') {
     return (
       <section
-        className={`page-band page-band--feature page-band--${section.theme}`}
+        className={`page-band page-band--feature page-band--${section.theme}${featureVariantClass}`}
         style={{ '--feature-media-ratio': section.mediaRatio || '16 / 9' }}
       >
         <div className="page-band-media feature-band-media">
@@ -14,8 +17,8 @@ function PortfolioBand({ section }) {
         </div>
 
         <div className="page-content">
-          <div className="feature-panel reveal">
-            <p className="eyebrow">{section.kicker}</p>
+          <div className={`feature-panel reveal${panelVariantClass}`}>
+            {section.kicker ? <p className="eyebrow">{section.kicker}</p> : null}
             {section.brandImage ? (
               <>
                 <h2 className="sr-only">{section.heading}</h2>

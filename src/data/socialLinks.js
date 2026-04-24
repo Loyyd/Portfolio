@@ -6,22 +6,22 @@ import tiktokIcon from '../assets/icons/tiktok.svg';
 export const socialLinks = [
   {
     name: 'Instagram',
-    url: 'https://instagram.com',
+    url: 'https://www.instagram.com/konrad.k3d/',
     icon: instagramIcon,
   },
   {
     name: 'YouTube',
-    url: 'https://youtube.com',
+    url: 'https://www.youtube.com/@KonradKunkel',
     icon: youtubeIcon,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://www.linkedin.com/in/konrad-kunkel-21a956256/',
     icon: linkedinIcon,
   },
   {
     name: 'TikTok',
-    url: 'https://tiktok.com',
+    url: 'https://www.tiktok.com/@konradkunkel',
     icon: tiktokIcon,
   },
 ];
