@@ -3,9 +3,12 @@ function PortfolioBand({ section }) {
   const panelVariantClass = section.panelVariant ? ` feature-panel--${section.panelVariant}` : '';
 
   if (section.type === 'feature') {
+    const imageParallaxClass =
+      section.backgroundImage && !section.backgroundVideo ? ' page-band--parallax-image' : '';
+
     return (
       <section
-        className={`page-band page-band--feature page-band--${section.theme}${featureVariantClass}`}
+        className={`page-band page-band--feature page-band--${section.theme}${featureVariantClass}${imageParallaxClass}`}
         style={{ '--feature-media-ratio': section.mediaRatio || '16 / 9' }}
       >
         <div className="page-band-media feature-band-media">

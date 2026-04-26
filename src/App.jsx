@@ -45,7 +45,56 @@ function App() {
     };
   }, [currentPath]);
 
+  useEffect(() => {
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frameId = 0;
+
+    const updateParallaxImages = () => {
+      frameId = 0;
+
+      const parallaxImages = document.querySelectorAll('.page-band--parallax-image .page-band-media img');
+
+      parallaxImages.forEach((image) => {
+        if (motionQuery.matches) {
+          image.style.removeProperty('--parallax-y');
+          return;
+        }
+
+        const band = image.closest('.page-band');
+        if (!band) return;
+
+        const rect = band.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        if (rect.bottom < 0 || rect.top > viewportHeight) return;
+
+        const maxTravel = viewportHeight * 0.18;
+        const parallaxY = Math.max(-maxTravel, Math.min(maxTravel, rect.top * -0.18));
+
+        image.style.setProperty('--parallax-y', `${parallaxY}px`);
+      });
+    };
+
+    const requestParallaxUpdate = () => {
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(updateParallaxImages);
+    };
+
+    updateParallaxImages();
+    window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    window.addEventListener('resize', requestParallaxUpdate);
+    motionQuery.addEventListener('change', requestParallaxUpdate);
+
+    return () => {
+      if (frameId) window.cancelAnimationFrame(frameId);
+      window.removeEventListener('scroll', requestParallaxUpdate);
+      window.removeEventListener('resize', requestParallaxUpdate);
+      motionQuery.removeEventListener('change', requestParallaxUpdate);
+    };
+  }, [currentPath]);
+
   const currentPage = useMemo(() => portfolioPages[currentPath], [currentPath]);
+  const heroParallaxClass = currentPage.heroImage && !currentPage.heroVideo ? ' page-band--parallax-image' : '';
 
   const navigateTo = (path) => {
     if (path === currentPath) {
@@ -63,7 +112,7 @@ function App() {
       <SiteHeader currentPath={currentPath} pages={portfolioPages} onNavigate={navigateTo} />
 
       <main>
-        <section className="page-hero page-band page-band--hero">
+        <section className={`page-hero page-band page-band--hero${heroParallaxClass}`}>
           <div className="page-band-media">
             {currentPage.heroVideo ? (
               <video

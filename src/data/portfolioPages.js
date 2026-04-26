@@ -42,31 +42,90 @@ export const portfolioPages = {
     sections: [
       {
         theme: 'midnight',
-        kicker: 'Overview',
-        heading: 'A portfolio built around visual craft, playable ideas, and product-focused execution.',
+        kicker: 'Collaborations',
+        heading: 'Collaborations and partners',
         copy:
-          'This page gives a quick read on the main areas I work in, so visitors can get context before moving deeper into the 3D, Gamedev, or Coding sections.',
+          'A selection of creative partnerships, shared projects, and team-based work where I contributed across visual direction, 3D production, game ideas, and interactive presentation.',
         cards: [
           {
-            title: '3D Art',
-            meta: 'Lookdev + Worldbuilding',
-            image: galleryTitan,
-            description:
-              'Cinematic stills, creature work, modeling studies, and atmosphere-first visual storytelling.',
-          },
-          {
-            title: 'Gamedev',
-            meta: 'Playable Worlds',
+            title: 'Catbotica',
+            meta: 'Worldbuilding + Launch Assets',
             image: catboticaBg,
             description:
-              'Prototypes, game jam collaborations, and interactive environments built around mood and exploration.',
+              'Story-world visuals, promo presentation, and community-facing assets for a character-driven universe.',
           },
           {
-            title: 'Coding',
-            meta: 'Frontend + Tools',
+            title: 'Cosmic Waters',
+            meta: 'Game Jam Collaboration',
+            image: galleryTitan,
+            description:
+              'A collaborative game jam project shaped around fast creative decisions, atmosphere, and playable presentation.',
+          },
+          {
+            title: 'Interactive Builds',
+            meta: 'Frontend + Realtime Work',
             image: counterPlatformBackground,
             description:
-              'Interfaces and technical builds shaped by both product thinking and visual presentation.',
+              'Shared technical projects where product thinking, UI work, and visual polish come together.',
+          },
+        ],
+      },
+      {
+        theme: 'steel',
+        kicker: 'Companies',
+        heading: 'Companies I worked with',
+        copy:
+          'A focused look at company and product work, from branded visual systems to practical interfaces and public-facing digital experiences.',
+        cards: [
+          {
+            title: 'Counter',
+            meta: 'Finance Platform',
+            image: counterPlatformBackground,
+            description:
+              'Product-facing interface work for a finance platform built around clarity, structure, and everyday usability.',
+          },
+          {
+            title: 'Catbotica',
+            meta: 'Creative Brand',
+            image: catboticaBg,
+            description:
+              'Visual and web presentation work supporting the Catbotica universe, its characters, and its community presence.',
+          },
+          {
+            title: 'Motiontonic',
+            meta: 'Creative Production',
+            image: galleryTitan,
+            description:
+              'Brand-adjacent creative work combining 3D visuals, web presentation, and polished digital storytelling.',
+          },
+        ],
+      },
+      {
+        theme: 'midnight',
+        kicker: 'Software',
+        layout: 'software-strip',
+        heading: 'The software that I use',
+        cards: [
+          {
+            title: 'Blender',
+            meta: 'Modeling + Animation',
+            image: blenderLogo,
+            fit: 'contain',
+            url: 'https://www.blender.org/',
+          },
+          {
+            title: 'Substance Painter',
+            meta: 'Texturing + Materials',
+            image: substanceLogo,
+            fit: 'contain',
+            url: 'https://www.adobe.com/products/substance3d-painter.html',
+          },
+          {
+            title: 'Unity',
+            meta: 'Real-Time Presentation',
+            image: unityLogo,
+            fit: 'contain',
+            url: 'https://unity.com/',
           },
         ],
       },
@@ -97,19 +156,6 @@ export const portfolioPages = {
     sections: [
       {
         type: 'feature',
-        theme: 'ember',
-        kicker: 'Featured Build',
-        heading: 'Gun Turret Thunder',
-        copy:
-          'A hard-surface turret study focused on layered mechanics, believable weight, and a more cinematic final presentation. This section uses the thumbnail as a full background so the project gets a stronger hero moment before the wider gallery begins.',
-        backgroundImage: gunTurretThumbnail,
-        mediaRatio: '16 / 9',
-        youtubeLabel: 'Watch On YouTube',
-        youtubeUrl:
-          'https://www.youtube.com/results?search_query=Konrad+Kunkel+gun+turret+3D',
-      },
-      {
-        type: 'feature',
         theme: 'steel',
         kicker: 'Motion Challenge',
         heading: 'Kinetic Rush',
@@ -129,7 +175,7 @@ export const portfolioPages = {
         copy:
           'A stylized 3D render challenge built around atmosphere, scale, and a strong cinematic read. The piece focuses on using lighting, framing, and environment mood to sell the story of the scene quickly.',
         backgroundVideo: chasmsCallRenderChallengeVideo,
-        mediaRatio: '16 / 9',
+        mediaRatio: '12 / 5',
         youtubeLabel: 'Watch On YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=Konrad+Kunkel+Chasm%27s+Call+3D+Render+Challenge',
@@ -142,10 +188,23 @@ export const portfolioPages = {
         copy:
           'A brick-built fight beat with stronger silhouette reads, quick impact posing, and a more playful action rhythm. This section uses the MP4 as a full background so the animation lands like a proper showcase moment inside the 3D page.',
         backgroundVideo: definitelyNotLegoChaosVideo,
-        mediaRatio: '16 / 9',
+        mediaRatio: '24 / 11',
         youtubeLabel: 'Search On YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=LEGO+Madara+vs+Might+Guy+Animation',
+      },
+      {
+        type: 'feature',
+        theme: 'ember',
+        kicker: 'Featured Build',
+        heading: 'Gun Turret Thunder',
+        copy:
+          'A hard-surface turret study focused on layered mechanics, believable weight, and a more cinematic final presentation. This section uses the thumbnail as a full background so the project gets a stronger hero moment before the wider gallery begins.',
+        backgroundImage: gunTurretThumbnail,
+        mediaRatio: '16 / 9',
+        youtubeLabel: 'Watch On YouTube',
+        youtubeUrl:
+          'https://www.youtube.com/results?search_query=Konrad+Kunkel+gun+turret+3D',
       },
       {
         type: 'feature',
@@ -159,35 +218,6 @@ export const portfolioPages = {
         youtubeLabel: 'Open YouTube',
         youtubeUrl:
           'https://www.youtube.com/results?search_query=Konrad+Kunkel+spider+modeling',
-      },
-      {
-        theme: 'midnight',
-        kicker: 'Software',
-        layout: 'software-strip',
-        heading: 'The software that I use',
-        cards: [
-          {
-            title: 'Blender',
-            meta: 'Modeling + Animation',
-            image: blenderLogo,
-            fit: 'contain',
-            url: 'https://www.blender.org/',
-          },
-          {
-            title: 'Substance Painter',
-            meta: 'Texturing + Materials',
-            image: substanceLogo,
-            fit: 'contain',
-            url: 'https://www.adobe.com/products/substance3d-painter.html',
-          },
-          {
-            title: 'Unity',
-            meta: 'Real-Time Presentation',
-            image: unityLogo,
-            fit: 'contain',
-            url: 'https://unity.com/',
-          },
-        ],
       },
     ],
   },
