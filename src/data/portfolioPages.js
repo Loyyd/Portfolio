@@ -12,6 +12,7 @@ import netflixLogo from '../assets/images/projects/code-8/netflix-logo.png';
 import gradeTrackerSectionBackground from '../assets/images/projects/grade-tracker/grade-tracker-background.png';
 import holySongsSectionBackground from '../assets/images/projects/holy-songs/holy-songs-background.png';
 import nullOrbitSectionBackground from '../assets/images/projects/null-orbit/orbit-background.png';
+import subaquaWebsiteBackground from '../assets/images/projects/subaqua/subaqua-website-background.png';
 import counterPlatformBackground from '../assets/images/projects/accounta/counter.png';
 import galleryTitan from '../assets/images/gallery_pictures/Titan-Pilot.jpg';
 import blenderLogo from '../assets/logos/blender_logo.png';
@@ -26,6 +27,7 @@ import definitelyNotLegoChaosVideo from '../assets/videos/definitely-not-lego-ch
 import neilosSneakPeekVideo from '../assets/videos/neilos-catbotica-sneak-peek.mp4';
 import archerTowerDefenseVideo from '../assets/videos/projects/archer/archer-tower-defense.mp4';
 import dungeonGameplayVideo from '../assets/videos/projects/dungeon/dungeon-gameplay.mp4';
+import herosUnitedGameplayVideo from '../assets/videos/projects/heros-united/heros-united-gameplay.mp4';
 
 export const portfolioPages = {
   '/about': {
@@ -403,6 +405,26 @@ export const portfolioPages = {
         youtubeLabel: 'Watch On YouTube',
         youtubeUrl: 'https://www.youtube.com/watch?v=LwQVaLcacq4',
       },
+      {
+        type: 'feature',
+        theme: 'violet',
+        kicker: 'Competition RPG',
+        heading: 'Heros United',
+        copy:
+          'A 2D RPG created for a competition, focused on party-style combat, progression, and a more playful adventure tone. This section uses the gameplay capture as a full background so the Gamedev page ends on a different style of playable project.',
+        backgroundVideo: herosUnitedGameplayVideo,
+        mediaRatio: '16 / 9',
+        actions: [
+          {
+            label: 'Watch Gameplay',
+            url: 'https://www.youtube.com/watch?v=woRXvMam_Zc',
+          },
+          {
+            label: 'GitHub Link',
+            url: 'https://github.com/Loyyd/Brackeys_GameJam',
+          },
+        ],
+      },
     ],
   },
   '/coding': {
@@ -497,6 +519,27 @@ export const portfolioPages = {
           {
             label: 'GitHub Link',
             url: 'https://github.com/Loyyd/uni-track',
+          },
+        ],
+      },
+      {
+        type: 'feature',
+        theme: 'ocean',
+        kicker: 'University Website',
+        heading: 'SubAqua',
+        copy:
+          'A university club website I am building for DCU SubAqua, focused on clearer event presentation, club identity, and a stronger public-facing web presence. This section uses the site screenshot as a full background so the project reads like another polished frontend case study on the coding page.',
+        backgroundImage: subaquaWebsiteBackground,
+        mediaFit: 'width',
+        mediaRatio: '16 / 9',
+        actions: [
+          {
+            label: 'Preview Website',
+            url: 'https://loyyd.github.io/dcusubaqua/',
+          },
+          {
+            label: 'GitHub Link',
+            url: 'https://github.com/Loyyd/dcusubaqua',
           },
         ],
       },

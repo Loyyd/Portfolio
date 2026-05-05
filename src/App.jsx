@@ -5,18 +5,36 @@ import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import { normalizePath, portfolioPages } from './data/portfolioPages';
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function stripBasePath(pathname) {
+  if (!basePath) return pathname || '/';
+  if (pathname.startsWith(basePath)) {
+    const strippedPath = pathname.slice(basePath.length);
+    return strippedPath || '/';
+  }
+
+  return pathname || '/';
+}
+
+function buildAppPath(path) {
+  return `${basePath}${path === '/' ? '/' : path}`;
+}
+
 function App() {
-  const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
+  const [currentPath, setCurrentPath] = useState(() => normalizePath(stripBasePath(window.location.pathname)));
 
   useEffect(() => {
-    const targetPath = normalizePath(window.location.pathname);
-    if (targetPath !== window.location.pathname) {
-      window.history.replaceState({}, '', targetPath);
+    const targetPath = normalizePath(stripBasePath(window.location.pathname));
+    const fullTargetPath = buildAppPath(targetPath);
+
+    if (fullTargetPath !== window.location.pathname) {
+      window.history.replaceState({}, '', fullTargetPath);
     }
     setCurrentPath(targetPath);
 
     const handlePopState = () => {
-      setCurrentPath(normalizePath(window.location.pathname));
+      setCurrentPath(normalizePath(stripBasePath(window.location.pathname)));
       window.scrollTo({ top: 0, behavior: 'instant' });
     };
 
@@ -102,7 +120,7 @@ function App() {
       return;
     }
 
-    window.history.pushState({}, '', path);
+    window.history.pushState({}, '', buildAppPath(path));
     setCurrentPath(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
