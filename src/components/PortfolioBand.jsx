@@ -4,11 +4,22 @@ function PortfolioBand({ section }) {
 
   if (section.type === 'feature') {
     const imageParallaxClass =
-      section.backgroundImage && !section.backgroundVideo ? ' page-band--parallax-image' : '';
+      section.backgroundImage &&
+      !section.backgroundVideo &&
+      section.mediaFit !== 'contain' &&
+      section.mediaFit !== 'width'
+        ? ' page-band--parallax-image'
+        : '';
+    const mediaFitClass =
+      section.mediaFit === 'contain'
+        ? ' page-band--feature-contain'
+        : section.mediaFit === 'width'
+          ? ' page-band--feature-fit-width'
+          : '';
 
     return (
       <section
-        className={`page-band page-band--feature page-band--${section.theme}${featureVariantClass}${imageParallaxClass}`}
+        className={`page-band page-band--feature page-band--${section.theme}${featureVariantClass}${imageParallaxClass}${mediaFitClass}`}
         style={{ '--feature-media-ratio': section.mediaRatio || '16 / 9' }}
       >
         <div className="page-band-media feature-band-media">
@@ -23,14 +34,25 @@ function PortfolioBand({ section }) {
           <div className={`feature-panel reveal${panelVariantClass}`}>
             {section.kicker ? <p className="eyebrow">{section.kicker}</p> : null}
             {section.brandImage ? (
-              <>
-                <h2 className="sr-only">{section.heading}</h2>
-                <img
-                  className="feature-brand"
-                  src={section.brandImage}
-                  alt={section.brandImageAlt || section.heading}
-                />
-              </>
+              section.showHeadingWithBrand ? (
+                <>
+                  <img
+                    className={`feature-brand${section.brandImageClass ? ` ${section.brandImageClass}` : ''}`}
+                    src={section.brandImage}
+                    alt={section.brandImageAlt || section.heading}
+                  />
+                  <h2>{section.heading}</h2>
+                </>
+              ) : (
+                <>
+                  <h2 className="sr-only">{section.heading}</h2>
+                  <img
+                    className={`feature-brand${section.brandImageClass ? ` ${section.brandImageClass}` : ''}`}
+                    src={section.brandImage}
+                    alt={section.brandImageAlt || section.heading}
+                  />
+                </>
+              )
             ) : (
               <h2>{section.heading}</h2>
             )}
