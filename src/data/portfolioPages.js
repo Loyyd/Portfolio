@@ -16,8 +16,17 @@ import subaquaWebsiteBackground from '../assets/images/projects/subaqua/subaqua-
 import counterPlatformBackground from '../assets/images/projects/accounta/counter.png';
 import galleryTitan from '../assets/images/gallery_pictures/Titan-Pilot.jpg';
 import blenderLogo from '../assets/logos/blender_logo.png';
+import ciscoPacketTracerLogo from '../assets/logos/cisco-packet-tracer.png';
+import davinciResolveStudioLogo from '../assets/logos/davinci-resolve-studio.png';
+import cargonatorLogo from '../assets/logos/partners/cargonator.jpg';
+import marianneLogo from '../assets/logos/partners/marianne.png';
+import meshyLogo from '../assets/logos/partners/meshy.webp';
+import motiontonicLogo from '../assets/logos/partners/motiontonic.webp';
+import subaquaLogo from '../assets/logos/partners/subaqua.png';
 import substanceLogo from '../assets/logos/substance.webp';
+import unrealLogo from '../assets/logos/unreal.png';
 import unityLogo from '../assets/logos/unity-badge.svg';
+import visualStudioCodeLogo from '../assets/logos/visual-studio-code.png';
 import trailerVideo from '../assets/videos/trailer.mp4';
 import chasmsCallRenderChallengeVideo from '../assets/videos/chasms-call-3d-render-challenge.mp4';
 import kineticRushVideo from '../assets/videos/kinetic-rush-challenge.mp4';
@@ -55,60 +64,52 @@ export const portfolioPages = {
       {
         theme: 'midnight',
         kicker: 'Collaborations',
+        layout: 'logo-carousel',
         heading: 'Collaborations and partners',
         copy:
-          'A selection of creative partnerships, shared projects, and team-based work where I contributed across visual direction, 3D production, game ideas, and interactive presentation.',
+          'A logo-led overview of collaborations, partnerships, and projects where I contributed across 3D work, visual storytelling, and interactive presentation.',
         cards: [
           {
-            title: 'Catbotica',
-            meta: 'Worldbuilding + Launch Assets',
-            image: catboticaBg,
-            description:
-              'Story-world visuals, promo presentation, and community-facing assets for a character-driven universe.',
-          },
-          {
-            title: 'Cosmic Waters',
-            meta: 'Game Jam Collaboration',
-            image: galleryTitan,
-            description:
-              'A collaborative game jam project shaped around fast creative decisions, atmosphere, and playable presentation.',
-          },
-          {
-            title: 'Interactive Builds',
-            meta: 'Frontend + Realtime Work',
-            image: counterPlatformBackground,
-            description:
-              'Shared technical projects where product thinking, UI work, and visual polish come together.',
-          },
-        ],
-      },
-      {
-        theme: 'steel',
-        kicker: 'Companies',
-        heading: 'Companies I worked with',
-        copy:
-          'A focused look at company and product work, from branded visual systems to practical interfaces and public-facing digital experiences.',
-        cards: [
-          {
-            title: 'Counter',
-            meta: 'Finance Platform',
-            image: counterPlatformBackground,
-            description:
-              'Product-facing interface work for a finance platform built around clarity, structure, and everyday usability.',
+            title: 'Netflix',
+            meta: 'Feature Film Credit',
+            image: netflixLogo,
+            fit: 'contain',
           },
           {
             title: 'Catbotica',
-            meta: 'Creative Brand',
-            image: catboticaBg,
-            description:
-              'Visual and web presentation work supporting the Catbotica universe, its characters, and its community presence.',
+            meta: 'Creative Collaboration',
+            image: catboticaLogoWhite,
+            fit: 'contain',
           },
           {
             title: 'Motiontonic',
             meta: 'Creative Production',
-            image: galleryTitan,
-            description:
-              'Brand-adjacent creative work combining 3D visuals, web presentation, and polished digital storytelling.',
+            image: motiontonicLogo,
+            fit: 'contain',
+          },
+          {
+            title: 'SubAqua',
+            meta: 'University Website',
+            image: subaquaLogo,
+            fit: 'contain',
+          },
+          {
+            title: 'Marianne',
+            meta: 'Website Collaboration',
+            image: marianneLogo,
+            fit: 'contain',
+          },
+          {
+            title: 'Cargonator',
+            meta: 'Website Collaboration',
+            image: cargonatorLogo,
+            fit: 'contain',
+          },
+          {
+            title: 'Meshy',
+            meta: 'Brand Partnership',
+            image: meshyLogo,
+            fit: 'contain',
           },
         ],
       },
@@ -138,6 +139,34 @@ export const portfolioPages = {
             image: unityLogo,
             fit: 'contain',
             url: 'https://unity.com/',
+          },
+          {
+            title: 'Unreal Engine',
+            meta: 'Realtime Worlds',
+            image: unrealLogo,
+            fit: 'contain',
+            url: 'https://www.unrealengine.com/',
+          },
+          {
+            title: 'DaVinci Resolve Studio',
+            meta: 'Editing + Color',
+            image: davinciResolveStudioLogo,
+            fit: 'contain',
+            url: 'https://www.blackmagicdesign.com/products/davinciresolve',
+          },
+          {
+            title: 'Visual Studio Code',
+            meta: 'Code + Tooling',
+            image: visualStudioCodeLogo,
+            fit: 'contain',
+            url: 'https://code.visualstudio.com/',
+          },
+          {
+            title: 'Cisco Packet Tracer',
+            meta: 'Networking + Simulation',
+            image: ciscoPacketTracerLogo,
+            fit: 'contain',
+            url: 'https://www.netacad.com/courses/packet-tracer',
           },
         ],
       },

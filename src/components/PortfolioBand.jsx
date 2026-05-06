@@ -1,6 +1,8 @@
 function PortfolioBand({ section }) {
   const featureVariantClass = section.panelVariant ? ` page-band--${section.panelVariant}` : '';
   const panelVariantClass = section.panelVariant ? ` feature-panel--${section.panelVariant}` : '';
+  const carouselCards =
+    section.layout === 'logo-carousel' ? [...section.cards, ...section.cards] : section.cards;
 
   if (section.type === 'feature') {
     const imageParallaxClass =
@@ -117,6 +119,23 @@ function PortfolioBand({ section }) {
                 <h3>{card.title}</h3>
               </a>
             ))}
+          </div>
+        ) : section.layout === 'logo-carousel' ? (
+          <div className="logo-carousel reveal" aria-label={section.heading}>
+            <div className="logo-carousel-track">
+              {carouselCards.map((card, index) => (
+                <article
+                  className="logo-carousel-item"
+                  key={`${card.title}-${index}`}
+                  aria-hidden={index >= section.cards.length}
+                >
+                  <div className="logo-carousel-icon">
+                    <img src={card.image} alt={index < section.cards.length ? card.title : ''} />
+                  </div>
+                  <span>{card.meta}</span>
+                </article>
+              ))}
+            </div>
           </div>
         ) : (
           <div className="gallery-grid">
