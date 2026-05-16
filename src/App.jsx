@@ -113,6 +113,7 @@ function App() {
 
   const currentPage = useMemo(() => portfolioPages[currentPath], [currentPath]);
   const heroParallaxClass = currentPage.heroImage && !currentPage.heroVideo ? ' page-band--parallax-image' : '';
+  const heroProfileCard = currentPage.profileCard;
 
   const navigateTo = (path) => {
     if (path === currentPath) {
@@ -145,7 +146,7 @@ function App() {
               <img src={currentPage.heroImage} alt={currentPage.label} />
             )}
           </div>
-          <div className="page-content page-hero-layout">
+          <div className={`page-content page-hero-layout${heroProfileCard ? ' page-hero-layout--with-profile' : ''}`}>
             <div className="hero-copy reveal">
               <p className="eyebrow">{currentPage.eyebrow}</p>
               {currentPage.title ? <h1>{currentPage.title}</h1> : null}
@@ -169,6 +170,29 @@ function App() {
                 </button>
               </div>
             </div>
+            {heroProfileCard ? (
+              <a
+                className="linkedin-profile-card reveal"
+                href={heroProfileCard.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${heroProfileCard.name} on LinkedIn`}
+              >
+                <span className="linkedin-profile-card__badge">LinkedIn</span>
+                <img
+                  className="linkedin-profile-card__portrait"
+                  src={heroProfileCard.image}
+                  alt={heroProfileCard.name}
+                />
+                <span className="linkedin-profile-card__body">
+                  <span className="linkedin-profile-card__name">{heroProfileCard.name}</span>
+                  <span className="linkedin-profile-card__label">{heroProfileCard.label}</span>
+                </span>
+                <span className="linkedin-profile-card__cta" aria-hidden="true">
+                  View profile
+                </span>
+              </a>
+            ) : null}
           </div>
         </section>
 

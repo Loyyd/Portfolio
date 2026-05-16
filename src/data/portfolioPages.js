@@ -13,7 +13,7 @@ import gradeTrackerSectionBackground from '../assets/images/projects/grade-track
 import holySongsSectionBackground from '../assets/images/projects/holy-songs/holy-songs-background.png';
 import nullOrbitSectionBackground from '../assets/images/projects/null-orbit/orbit-background.png';
 import subaquaWebsiteBackground from '../assets/images/projects/subaqua/subaqua-website-background.png';
-import counterPlatformBackground from '../assets/images/projects/accounta/counter.png';
+import konradProfileImage from '../assets/images/profile/konrad-kunkel-profile.png';
 import galleryTitan from '../assets/images/gallery_pictures/Titan-Pilot.jpg';
 import blenderLogo from '../assets/logos/blender_logo.png';
 import ciscoPacketTracerLogo from '../assets/logos/cisco-packet-tracer.png';
@@ -27,16 +27,16 @@ import substanceLogo from '../assets/logos/substance.webp';
 import unrealLogo from '../assets/logos/unreal.png';
 import unityLogo from '../assets/logos/unity-badge.svg';
 import visualStudioCodeLogo from '../assets/logos/visual-studio-code.png';
-import trailerVideo from '../assets/videos/trailer.mp4';
-import chasmsCallRenderChallengeVideo from '../assets/videos/chasms-call-3d-render-challenge.mp4';
-import kineticRushVideo from '../assets/videos/kinetic-rush-challenge.mp4';
-import makingWebgameVideo from '../assets/videos/making-a-3d-webgame.mp4';
+import trailerVideo from '../assets/videos/trailer.webm';
+import chasmsCallRenderChallengeVideo from '../assets/videos/chasms-call-3d-render-challenge.webm';
+import kineticRushVideo from '../assets/videos/kinetic-rush-challenge.webm';
+import makingWebgameVideo from '../assets/videos/making-a-3d-webgame.webm';
 import cosmicWatersTrailerVideo from '../assets/videos/cosmic-waters-game-jam.mp4';
-import definitelyNotLegoChaosVideo from '../assets/videos/definitely-not-lego-chaos.mp4';
-import neilosSneakPeekVideo from '../assets/videos/neilos-catbotica-sneak-peek.mp4';
-import archerTowerDefenseVideo from '../assets/videos/projects/archer/archer-tower-defense.mp4';
-import dungeonGameplayVideo from '../assets/videos/projects/dungeon/dungeon-gameplay.mp4';
-import herosUnitedGameplayVideo from '../assets/videos/projects/heros-united/heros-united-gameplay.mp4';
+import definitelyNotLegoChaosVideo from '../assets/videos/definitely-not-lego-chaos.webm';
+import neilosSneakPeekVideo from '../assets/videos/neilos-catbotica-sneak-peek.webm';
+import archerTowerDefenseVideo from '../assets/videos/projects/archer/archer-tower-defense.webm';
+import dungeonGameplayVideo from '../assets/videos/projects/dungeon/dungeon-gameplay.webm';
+import herosUnitedGameplayVideo from '../assets/videos/projects/heros-united/heros-united-gameplay.webm';
 
 export const portfolioPages = {
   '/about': {
@@ -46,6 +46,12 @@ export const portfolioPages = {
     intro:
       'I work across 3D art, game projects, and frontend builds, with a focus on strong atmosphere, interactive presentation, and polished visual storytelling.',
     heroImage: galleryTitan,
+    profileCard: {
+      image: konradProfileImage,
+      name: 'Konrad Kunkel',
+      label: 'LinkedIn Profile',
+      url: 'https://www.linkedin.com/in/konrad-kunkel-21a956256/',
+    },
     heroActions: [
       {
         path: '/3d',

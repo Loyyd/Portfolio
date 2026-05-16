@@ -313,6 +313,13 @@ main {
   display: block;
 }
 
+.page-hero-layout--with-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 46rem) minmax(16rem, 21rem);
+  align-items: center;
+  gap: clamp(2rem, 8vw, 7rem);
+}
+
 .hero-copy h1,
 .section-copy h2 {
   margin: 0;
@@ -417,6 +424,100 @@ main {
 
 .hero-copy {
   width: min(46rem, 100%);
+}
+
+.linkedin-profile-card {
+  position: relative;
+  justify-self: end;
+  display: grid;
+  width: min(100%, 20rem);
+  padding: 1rem;
+  border: 1px solid rgba(120, 196, 255, 0.3);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(12, 24, 34, 0.9), rgba(8, 16, 22, 0.74)),
+    rgba(5, 11, 16, 0.72);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+  color: var(--text-strong);
+  overflow: hidden;
+  text-decoration: none;
+  backdrop-filter: blur(16px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.linkedin-profile-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.32rem;
+  background: linear-gradient(90deg, #0a66c2, #78c4ff);
+}
+
+.linkedin-profile-card:hover,
+.linkedin-profile-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(120, 196, 255, 0.72);
+  box-shadow: 0 32px 80px rgba(10, 102, 194, 0.24);
+}
+
+.linkedin-profile-card__badge {
+  justify-self: start;
+  margin-bottom: 0.85rem;
+  padding: 0.32rem 0.55rem;
+  border-radius: 6px;
+  background: #0a66c2;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.linkedin-profile-card__portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.linkedin-profile-card__body {
+  display: block;
+  margin-top: 1rem;
+}
+
+.linkedin-profile-card__name,
+.linkedin-profile-card__label {
+  display: block;
+}
+
+.linkedin-profile-card__name {
+  color: var(--text-strong);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.linkedin-profile-card__label {
+  margin-top: 0.22rem;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.linkedin-profile-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  margin-top: 1rem;
+  color: #78c4ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .gallery-card-body span {
@@ -817,6 +918,11 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .linkedin-profile-card {
+    justify-self: start;
+    width: min(100%, 18rem);
+  }
+
   .gallery-card,
   .gallery-card:nth-child(4n + 1),
   .gallery-card:nth-child(4n + 2),
@@ -857,6 +963,15 @@ main {
 
   .hero-nav-button strong {
     font-size: 1.7rem;
+  }
+
+  .page-hero-layout--with-profile {
+    gap: 2rem;
+  }
+
+  .linkedin-profile-card {
+    width: min(100%, 16rem);
+    padding: 0.8rem;
   }
 
   .feature-actions {
