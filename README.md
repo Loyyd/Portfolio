@@ -29,6 +29,20 @@ Preview the production build:
 npm run preview
 ```
 
+## Swords hosting
+
+The container serves `https://portfolio.bcgen.ie/konradkunkel/` with direct-page
+fallbacks and cached assets. Build it with:
+
+```bash
+docker build --platform linux/amd64 -t registry.srd.bcgen.ie/bcgen-ie/portfolio-konradkunkel:TAG .
+```
+
+The Nomad job and DNS declaration live in the `private-cloud-federation`
+repository under `deploy/portfolio-konradkunkel/` and
+`deploy/traefik/cloudflare-public-dns.json`. Deployment credentials come from
+OpenBao at `https://bao.srd.bcgen.ie`. The workload runs on Swords nodes.
+
 ## Project Structure
 
 ```text
