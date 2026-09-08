@@ -74,7 +74,7 @@ function PortfolioBand({ section }) {
                   </a>
                 ))}
               </div>
-            ) : (
+            ) : section.youtubeUrl ? (
               <a
                 className="primary-cta feature-cta"
                 href={section.youtubeUrl}
@@ -83,7 +83,7 @@ function PortfolioBand({ section }) {
               >
                 {section.youtubeLabel}
               </a>
-            )}
+            ) : null}
           </div>
         </div>
       </section>
