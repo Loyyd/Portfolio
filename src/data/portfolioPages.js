@@ -493,7 +493,11 @@ export const portfolioPages = {
         mediaRatio: '16 / 9',
         actions: [
           {
-            label: 'View Project',
+            label: 'View Live Site',
+            url: 'https://accounta.bcgen.ie/',
+          },
+          {
+            label: 'GitHub Link',
             url: 'https://github.com/Loyyd/accounta',
           },
           {
@@ -533,6 +537,12 @@ export const portfolioPages = {
         backgroundImage: aiDroneSectionBackground,
         mediaFit: 'width',
         mediaRatio: '16 / 9',
+        actions: [
+          {
+            label: 'GitHub Link',
+            url: 'https://github.com/Loyyd/ai-drone',
+          },
+        ],
       },
       {
         type: 'feature',
