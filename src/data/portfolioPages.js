@@ -454,10 +454,6 @@ export const portfolioPages = {
             label: 'Watch Gameplay',
             url: 'https://www.youtube.com/watch?v=woRXvMam_Zc',
           },
-          {
-            label: 'GitHub Link',
-            url: 'https://github.com/Loyyd/Brackeys_GameJam',
-          },
         ],
       },
     ],
@@ -495,8 +491,16 @@ export const portfolioPages = {
         backgroundImage: accountaSectionBackground,
         mediaFit: 'width',
         mediaRatio: '16 / 9',
-        youtubeLabel: 'View Project',
-        youtubeUrl: 'https://github.com/Loyyd/accounta',
+        actions: [
+          {
+            label: 'View Project',
+            url: 'https://github.com/Loyyd/accounta',
+          },
+          {
+            label: 'Watch Video',
+            url: 'https://www.youtube.com/watch?v=1Iqf4wWtpHs',
+          },
+        ],
       },
       {
         type: 'feature',
@@ -529,12 +533,6 @@ export const portfolioPages = {
         backgroundImage: aiDroneSectionBackground,
         mediaFit: 'width',
         mediaRatio: '16 / 9',
-        actions: [
-          {
-            label: 'GitHub Link',
-            url: 'https://github.com/Loyyd/ai-drone',
-          },
-        ],
       },
       {
         type: 'feature',
