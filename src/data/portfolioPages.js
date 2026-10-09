@@ -203,6 +203,30 @@ export const portfolioPages = {
     sections: [
       {
         type: 'feature',
+        theme: 'copper',
+        kicker: 'Feature Film VFX',
+        heading: 'CODE 8 THE MOVIE',
+        copy:
+          'A feature-film VFX section based on the CODE 8 showcase from Motiontonic, reflecting the work I contributed there. This uses the same guardian background so the 3D page closes on a darker, more cinematic sci-fi moment.',
+        backgroundImage: code8SectionBackground,
+        brandImage: netflixLogo,
+        brandImageAlt: 'Netflix',
+        brandImageClass: 'feature-brand--netflix',
+        showHeadingWithBrand: true,
+        mediaRatio: '21 / 9',
+        actions: [
+          {
+            label: 'Watch Now',
+            url: 'https://www.youtube.com/watch?v=6Aq6ktl24Gw',
+          },
+          {
+            label: 'IMDb Link',
+            url: 'https://www.imdb.com/name/nm15871529/?ref_=fn_t_1',
+          },
+        ],
+      },
+      {
+        type: 'feature',
         theme: 'violet',
         kicker: '3D Render Challenge',
         heading: "Chasm's Call",
@@ -236,30 +260,6 @@ export const portfolioPages = {
         mediaRatio: '24 / 11',
         youtubeLabel: 'Search On YouTube',
         youtubeUrl: 'https://www.youtube.com/watch?v=OilnHUUkruQ',
-      },
-      {
-        type: 'feature',
-        theme: 'copper',
-        kicker: 'Feature Film VFX',
-        heading: 'CODE 8 THE MOVIE',
-        copy:
-          'A feature-film VFX section based on the CODE 8 showcase from Motiontonic, reflecting the work I contributed there. This uses the same guardian background so the 3D page closes on a darker, more cinematic sci-fi moment.',
-        backgroundImage: code8SectionBackground,
-        brandImage: netflixLogo,
-        brandImageAlt: 'Netflix',
-        brandImageClass: 'feature-brand--netflix',
-        showHeadingWithBrand: true,
-        mediaRatio: '21 / 9',
-        actions: [
-          {
-            label: 'Watch Now',
-            url: 'https://www.youtube.com/watch?v=6Aq6ktl24Gw',
-          },
-          {
-            label: 'IMDb Link',
-            url: 'https://www.imdb.com/name/nm15871529/?ref_=fn_t_1',
-          },
-        ],
       },
       {
         type: 'feature',
